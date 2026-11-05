@@ -130,8 +130,8 @@ Weights and thresholds live in `config.py`. Equal weighting is an initial baseli
 Strong disagreement can produce an unsure result. For example, model and style scores of 0.9 and 0.1 would combine to 0.5. This is a mathematical example, not an observed calibration run.
 
 The recorded submission below produced model score 0.6928 and style score 0.78, combining to approximately 0.7364. Both signals leaned AI-like in this test.
-
-A measured disagreement case is documented below. The full four-category calibration run remains incomplete. No detection-accuracy claim is made.
+     
+A measured disagreement case is documented above. The full four-category calibration run remains incomplete. No detection-accuracy claim is made.
 
 ## Label Variants
 
