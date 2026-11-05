@@ -64,6 +64,22 @@ The label explicitly says the result is not proof and points the writer to the a
 
 ## Signals and Scoring
 
+### Additional submission probes and signal disagreement
+
+I submitted three assistant-generated passages through POST /submit. These probes demonstrate pipeline behavior, not detection accuracy on genuine human writing.
+
+| Probe | Model score | Style score | Combined score | Returned guess |
+|---|---:|---:|---:|---|
+| Ornate | 0.1492 | 0.0627 | 0.10595 | human |
+| Mixed | 0.7682 | 0.1036 | 0.4359 | unsure |
+| Uniform | 0.6928 | 0.7800 | 0.7364 | ai |
+
+The mixed passage is a measured disagreement case. The model signal scored it 0.7682, while the style signal scored it 0.1036. Equal weighting produced `(0.7682 + 0.1036) / 2 = 0.4359`, which falls in the unsure range. The combining rule therefore avoided an AI label when the signals strongly disagreed.
+
+The ornate passage was assistant-generated but received a human label. This illustrates a false negative: low predictability and varied text shape do not establish human authorship.
+
+All three labels were reached through actual submissions. The full calibration set containing genuine human writing and lightly edited AI writing remains incomplete.
+
 ### Signal one: local model
 
 File and function: `detector.py::model_signal`.
@@ -115,7 +131,7 @@ Strong disagreement can produce an unsure result. For example, model and style s
 
 The recorded submission below produced model score 0.6928 and style score 0.78, combining to approximately 0.7364. Both signals leaned AI-like in this test.
 
-A measured disagreement case and the full four-category calibration run have not yet been documented. No detection-accuracy claim is made.
+A measured disagreement case is documented below. The full four-category calibration run remains incomplete. No detection-accuracy claim is made.
 
 ## Label Variants
 
@@ -127,7 +143,7 @@ A measured disagreement case and the full four-category calibration run have not
 
 The unsure label admits uncertainty without accusing the writer and identifies a way to challenge the assessment.
 
-All three branches exist in the label mapping. Only the AI label has been demonstrated through a real submission in the recorded run below; end-to-end examples producing human and unsure labels remain to be collected.
+All three labels have now been demonstrated through actual submissions: the ornate probe returned human, the mixed probe returned unsure, and the uniform probe returned AI. These were all assistant-generated passages, so label coverage does not demonstrate authorship accuracy.
 
 ## Sample Run
 
@@ -251,7 +267,7 @@ The criteria were finalized after implementation and the initial smoke test, not
 ### Current limitations
 
 - Detection accuracy has not been established.
-- Full calibration and end-to-end coverage of all three labels remain incomplete.
+- Full calibration with genuine human writing and lightly edited AI writing remains incomplete.
 - An appeal is recorded, but no human review workflow or automatic resolution is implemented.
 - Appeal ownership is not authenticated.
 - Rate limiting remains disabled for Unit 7.
