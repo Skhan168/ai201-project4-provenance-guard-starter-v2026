@@ -78,7 +78,7 @@ def score_to_label(score: float) -> tuple[str, str]:
 
     return (
         "unsure",
-                "We cannot confidently distinguish human-written from AI-generated "
+        "We cannot confidently distinguish human-written from AI-generated "
         "writing in this text. This is not an accusation of AI use. "
         "You can request a review using the content ID."
     )
