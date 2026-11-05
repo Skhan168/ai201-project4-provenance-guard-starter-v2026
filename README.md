@@ -1,331 +1,259 @@
 # Provenance Guard
 
-> ### 👋 Start here
->
-> **New to this repo? Read [RUNNING.md](RUNNING.md) first.**
->
-> Once `python test.py` passes, in one terminal:
->
-> ```bash
-> python app.py
-> ```
->
-> and in another:
->
-> ```bash
-> curl -X POST http://127.0.0.1:5000/ping \
->   -H "Content-Type: application/json" \
->   -d '{"message": "hello"}'
-> ```
->
-> That's a web service. Something sent it text and it sent something back.
-> Everything this unit is filling in the middle.
->
-> **The rest of this file is your submission.** Fill it in as you go.
+A local backend service that measures AI-like writing patterns using two experimental signals. Its assessments are not proof of authorship.
 
----
+See [RUNNING.md](RUNNING.md) for environment setup. Start the service with:
 
-<!-- ─────────────────────────────────────────────────────────────────────────
-     Unit 7 asks for the first five sections. Unit 8 adds the five below.
-
-     Everything is pasted as TEXT. A pasted curl response gets full credit;
-     a picture of your terminal gets none.
-     ───────────────────────────────────────────────────────────────────────── -->
-
-<!-- ═══════════════════════ UNIT 7 — THE BUILD ═══════════════════════ -->
+```powershell
+python app.py
+```
 
 ## What This Does
 
-<!-- The path a submission takes, from arriving to the label a reader sees.
-     Six or seven steps — this is the trace you wrote in Milestone 1. -->
+1. A client sends a JSON object containing `text` and `creator_id` to POST `/submit`.
+2. The route validates the fields. Missing or empty text is rejected with HTTP 400; text longer than 10,000 characters is rejected with HTTP 413. Rejected submissions are recorded in the audit log.
+3. `detector.py::model_signal` uses local GPT-2 perplexity to produce a model score between 0 and 1.
+4. `stylometry.py::style_signal` measures sentence-length variation and vocabulary repetition to produce a second score between 0 and 1.
+5. `scoring.py::combine_signals` averages the two scores with equal weights.
+6. `scoring.py::score_to_label` selects a human, unsure, or AI assessment. The service creates a content ID and records the decision, both signal scores, combined score, label, and status in `logs/audit.jsonl`.
+7. The client receives the content ID, assessment, label, and scores. A writer can challenge the decision through POST `/appeal`, which appends an appeal event with status `under_review`.
 
+### Endpoint contracts
 
+POST `/submit` accepts:
 
----
+```json
+{
+  "text": "A passage to assess.",
+  "creator_id": "writer-123"
+}
+```
+
+A successful HTTP 200 response contains:
+
+- `content_id`: generated UUID string.
+- `guess`: `human`, `unsure`, or `ai`.
+- `confidence`: combined AI-like score from 0 to 1.
+- `label`: full reader-facing explanation.
+- `model_score`: model signal from 0 to 1.
+- `style_score`: style signal from 0 to 1.
+- `status`: `decided`.
+
+The field named `confidence` is the combined AI-like score, not a calibrated probability or confidence in the selected label.
+
+Invalid input returns an `error` string. Missing, empty, wrongly typed, or unscorable text returns HTTP 400. Oversized text returns HTTP 413. A caught detector-loading failure returns HTTP 503.
+
+POST `/appeal` accepts:
+
+```json
+{
+  "content_id": "An existing submission ID",
+  "reasoning": "Why the writer challenges the assessment."
+}
+```
+
+A successful HTTP 200 response contains `content_id`, `status: "under_review"`, and a confirmation `message`. Invalid appeal fields return HTTP 400; an unknown content ID returns HTTP 404.
+
+GET `/log?limit=2` returns a `count` and an `entries` array containing the most recent audit events.
+
+### False-positive scenario
+
+A genuine writer might use ordinary vocabulary and sentences of similar lengths. Both signals could score that writing as AI-like. If the combined score were 0.70, the writer would receive the AI label below. This is an illustrative scenario, not a measured human test result.
+
+The label explicitly says the result is not proof and points the writer to the appeal path. An appeal records the writer's reasoning and moves the item's latest recorded status to `under_review`; it does not automatically reverse the assessment.
 
 ## Signals and Scoring
 
-<!-- For each signal: what property it measures, why that might differ between
-     human and AI writing, and WHAT IT CAN'T SEE.
+### Signal one: local model
 
-     The blind spot is not optional. If you can't name it you don't understand
-     the signal yet — and unit 8's attack set is built out of blind spots. -->
+File and function: `detector.py::model_signal`.
 
-### Signal one — the model signal
+This signal measures how predictable the text is to GPT-2 using perplexity. Lower perplexity produces a higher AI-like score.
 
-**What it measures:**
+The supplied mapping is:
 
-**Why that might differ between human and AI writing:**
+```text
+model_score = 1 / (1 + (perplexity / 45.0) ** 1.6)
+```
 
-**What it can't see:**
+The detector scores at most 400 tokens. Predictable generated text may score highly, but predictability is not authorship.
 
-### Signal two — the style signal
+Blind spot: Genuine human writing can use common words and predictable phrasing. Unusual vocabulary can also make AI-generated text look more human-like to this signal. It cannot verify who wrote the text.
 
-**What it measures:**
+### Signal two: style
 
-**Why that might differ between human and AI writing:**
+File and function: `stylometry.py::style_signal`.
 
-**What it can't see:**
+The style signal combines two text-shape measurements:
 
-### The combining rule
+- Sentence-length spread: population standard deviation of sentence word counts divided by their mean. The spread is capped at 1 and subtracted from 1 to obtain sentence uniformity.
+- Type-token ratio: unique lowercase words divided by total recognized words. This is subtracted from 1 to obtain vocabulary repetition.
 
-<!-- Write the rule in words, then give the numbers. What happens when the two
-     signals disagree? -->
+```text
+style_score = 0.6 * sentence_uniformity + 0.4 * vocabulary_repetition
+```
 
-**The rule:**
+For fewer than two nonempty sentences, sentence uniformity contributes a neutral 0.5. Text with no recognized words receives a neutral style score of 0.5 from the helper, although the submission route rejects it.
 
-**The numbers:**
+Uniform sentences and repeated vocabulary are experimental AI-like indicators, not validated authorship evidence.
 
-**Where it lives:** `scoring.py::combine_signals`
+Blind spot: A human may naturally write sentences of similar lengths, so low sentence-length variation could incorrectly flag genuine human writing as AI-generated. A human-written short story may use consistent sentence lengths for stylistic effect. Vocabulary ratio also depends on passage length, and changing words or sentence boundaries can alter the score without changing authorship.
 
-<!-- ⚠️ The grader checks your code against that line. If your rule lives
-     somewhere else, say where. -->
+The word splitter recognizes ASCII letters, digits, and apostrophes; it is not a multilingual tokenizer. The punctuation-density helper is implemented but does not contribute to the style score.
 
-**A case where my two signals split, and what my rule does with it:**
+### Combining rule
 
+File and function: `scoring.py::combine_signals`.
 
+```text
+combined_score = 0.5 * model_score + 0.5 * style_score
+```
 
----
+Weights and thresholds live in `config.py`. Equal weighting is an initial baseline, not a finding that the signals are equally reliable.
+
+Strong disagreement can produce an unsure result. For example, model and style scores of 0.9 and 0.1 would combine to 0.5. This is a mathematical example, not an observed calibration run.
+
+The recorded submission below produced model score 0.6928 and style score 0.78, combining to approximately 0.7364. Both signals leaned AI-like in this test.
+
+A measured disagreement case and the full four-category calibration run have not yet been documented. No detection-accuracy claim is made.
 
 ## Label Variants
 
-<!-- The exact text of all three labels, as a reader would see them, and the
-     score range each covers.
-
-     Write them for someone who has never heard the word "threshold". -->
-
-| Label | Score range | The exact text a reader sees |
+| Guess | Combined score range | Exact reader-facing label |
 |---|---|---|
-| high-confidence human |  |  |
-| unsure |  |  |
-| high-confidence AI |  |  |
+| `human` | 0.00 ≤ score ≤ 0.35 | This text shows patterns associated with human writing. This assessment does not verify who wrote it. |
+| `unsure` | 0.35 < score < 0.65 | We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID. |
+| `ai` | 0.65 ≤ score ≤ 1.00 | This text shows patterns associated with AI-generated writing. This is not proof of AI use. If you wrote it yourself, you can request a review using the content ID. |
 
-**Why I worded the "unsure" one this way:**
-<!-- It's the hardest of the three. It has to admit uncertainty without
-     sounding like an accusation, because the person reading it may well have
-     written every word themselves. -->
+The unsure label admits uncertainty without accusing the writer and identifies a way to challenge the assessment.
 
-
-
----
+All three branches exist in the label mapping. Only the AI label has been demonstrated through a real submission in the recorded run below; end-to-end examples producing human and unsure labels remain to be collected.
 
 ## Sample Run
 
-<!-- One submission and one appeal, pasted as text: the request, the response,
-     and the log entries. -->
+These requests were executed locally in Windows PowerShell. The passage was supplied by the AI assistant as test text; it is not a genuine-human accuracy sample.
 
-**A submission**
+### Submission request
 
-<!-- The response needs content_id, guess, confidence, label, AND both
-     signal scores - model_score and style_score. Unit 8's tools read those
-     two off the response, so leaving them out costs you next unit's
-     diagnostics. -->
+```powershell
+$submissionBody = @{
+    text = "The system provides useful information. The system provides clear answers. The system provides helpful results. The system provides consistent support."
+    creator_id = "fawaz-test"
+} | ConvertTo-Json
 
-```bash
-$ curl -X POST http://127.0.0.1:5000/submit \
-  -H "Content-Type: application/json" \
-  -d '{"text": "...", "creator_id": "..."}'
+$submission = Invoke-RestMethod `
+    -Method Post `
+    -Uri "http://127.0.0.1:5000/submit" `
+    -ContentType "application/json" `
+    -Body $submissionBody
+
+$submission | ConvertTo-Json -Depth 10
 ```
+
+### Submission response
 
 ```json
-
+{
+  "confidence": 0.7363999999999999,
+  "content_id": "766059e7-e844-4a7d-94b7-8d3913655127",
+  "guess": "ai",
+  "label": "This text shows patterns associated with AI-generated writing. This is not proof of AI use. If you wrote it yourself, you can request a review using the content ID.",
+  "model_score": 0.6928,
+  "status": "decided",
+  "style_score": 0.78
+}
 ```
 
-**An appeal**
+### Appeal request
 
-```bash
-$ curl -X POST http://127.0.0.1:5000/appeal \
-  -H "Content-Type: application/json" \
-  -d '{"content_id": "...", "reasoning": "..."}'
+```powershell
+$appealBody = @{
+    content_id = $submission.content_id
+    reasoning = "This is a test of the appeal workflow. Please review the automated assessment."
+} | ConvertTo-Json
+
+$appeal = Invoke-RestMethod `
+    -Method Post `
+    -Uri "http://127.0.0.1:5000/appeal" `
+    -ContentType "application/json" `
+    -Body $appealBody
+
+$appeal | ConvertTo-Json -Depth 10
 ```
+
+### Appeal response
 
 ```json
-
+{
+  "content_id": "766059e7-e844-4a7d-94b7-8d3913655127",
+  "message": "Your appeal was recorded and the submission is under review.",
+  "status": "under_review"
+}
 ```
 
-**What the log shows afterwards**
+### Log request
 
-```bash
-$ curl "http://127.0.0.1:5000/log?limit=3"
+```powershell
+Invoke-RestMethod `
+    -Uri "http://127.0.0.1:5000/log?limit=2" |
+    ConvertTo-Json -Depth 10
 ```
+
+### Log response
 
 ```json
-
+{
+  "count": 2,
+  "entries": [
+    {
+      "combined_score": 0.7363999999999999,
+      "content_id": "766059e7-e844-4a7d-94b7-8d3913655127",
+      "creator_id": "fawaz-test",
+      "guess": "ai",
+      "label": "This text shows patterns associated with AI-generated writing. This is not proof of AI use. If you wrote it yourself, you can request a review using the content ID.",
+      "model_score": 0.6928,
+      "status": "decided",
+      "style_score": 0.78,
+      "timestamp": "2026-11-05T02:27:57+00:00"
+    },
+    {
+      "content_id": "766059e7-e844-4a7d-94b7-8d3913655127",
+      "creator_id": "fawaz-test",
+      "event": "appeal",
+      "reasoning": "This is a test of the appeal workflow. Please review the automated assessment.",
+      "status": "under_review",
+      "timestamp": "2026-11-05T02:28:25+00:00"
+    }
+  ]
+}
 ```
 
----
+The audit log is append-only. The original decision remains unchanged; the later appeal event records the item's new status.
 
 ## How I Used AI
 
-**Moment 1**
+### Moment 1: Understanding signal blind spots
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+I asked about predictable writing, similar sentence lengths, and examples such as poems and short stories. The assistant explained the distinction between a writing pattern and proof of authorship. I used that discussion to describe how genuine human writing could be incorrectly flagged.
 
-**Moment 2**
+### Moment 2: Implementation and debugging
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+I asked for help completing the project using the starter files. The assistant supplied substantial implementation code for the style signal, submission route, appeal route, and reader-facing labels. I pasted and saved the changes, ran the syntax check, started the server, and executed the PowerShell requests.
 
-<!-- ═══════════════════════ UNIT 8 — THE TEST ═══════════════════════ -->
+My first submission exposed a placeholder label. With the assistant's help, I replaced the label function and repeated the test. The later response contained the finished label, and I verified that an appeal appeared in the audit log.
 
----
+### Criteria and documentation assistance
 
-## Rate Limiting
+I chose a maximum of 3 false positives in 10 human samples, a minimum average score gap of 0.50, and three passages to demonstrate the three labels. I explained my intended appeal and invalid-input outcomes. The assistant helped turn those choices into specific testing procedures, drafted wording, and assembled this README from the code and recorded outputs.
 
-**My limits:** ___ per minute, ___ per day
+The criteria were finalized after implementation and the initial smoke test, not before building. The full acceptance evaluation has not yet been run.
 
-**Why those numbers and not others:**
-<!-- Think about two people: a real writer submitting their own work a few
-     times an hour, and a script sending a thousand variations to map your
-     thresholds. Your numbers have to be liveable for the first and hostile to
-     the second. -->
+### Current limitations
 
-**What a caller counts as:** <!-- per address, or per creator_id? They fail
-differently — one script can look like a thousand callers, and one household
-can look like one. -->
-
-**The run of status codes when I pushed past it:**
-
-<!-- python run_attacks.py --flood 15 -->
-
-```
-
-```
-
----
-
-## Attack Run — Before
-
-<!-- Every attack with its outcome and a held-or-broke mark.
-     `run_attacks.py --label before` produces the table. -->
-
-
-
-**Ten audit log entries from the run**
-
-<!-- Choose entries that show the interesting failures, not the ten easiest. -->
-
-```json
-
-```
-
-**The single worst outcome** — the one I'd least want to explain to a writer
-whose work got caught by it:
-
-
-
----
-
-## Run Log and Verdicts
-
-<!-- Your five criteria across three trials. `run_eval.py --label before`. -->
-
-| Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
-|---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
-
-**Real output from one trial**, pasted as text, naming the file and function
-that produced it:
-
-```json
-
-```
-
-**Diagnoses**
-
-<!-- For each miss AND each broken attack: the stage and the mechanism.
-
-     Your service has five stages: the route, signal one, signal two, the
-     combining rule, and the label mapping.
-
-     Not a diagnosis:  "The evasion attacks got through."
-     A diagnosis:      "Four evasion inputs got through. All four had typos
-                        added to AI-generated text. My second signal measures
-                        word variety, and typos raise word variety — so it read
-                        them as more human. My combining rule weights that
-                        signal at 0.6, so it dragged the whole score down."
-
-     Look for a pattern. Five failures on one signal is one problem, not five. -->
-
-
-
----
-
-## The Improvement
-
-**What I changed:**
-
-**Which diagnosis pointed at it:**
-
-### Attack Run — After
-
-<!-- Same format. `run_attacks.py --label after` -->
-
-
-
-**Did it help, and how do I know:**
-
-<!-- Widening the unsure band usually fixes one problem and creates another.
-     Reporting that trade honestly is worth full credit. -->
-
-
-
----
-
-## What's Still Broken
-
-<!-- For each attack still getting through and each criterion still missed:
-     what you'd do, and why you stopped. -->
-
-
-
-**The trade I'd make if this ran for real:**
-
-<!-- Two sentences. Fewer wrong accusations means more AI text getting through.
-     Say which way you'd go and WHO PAYS FOR IT. -->
-
-
-
-<!-- ═════════════════════════════════════════════════════════════════════
-
-     SUBMISSION CHECKLIST — unit 7
-
-       [ ] criteria.md has five numbered criteria, each naming a target
-       [ ] Each has a reason underneath
-       [ ] POST /submit returns content_id, guess, confidence, label,
-           model_score and style_score
-       [ ] Two signals that measure DIFFERENT things, each with a named blind spot
-       [ ] Three label variants, all reachable, written out in full
-       [ ] POST /appeal changes status and writes to the log
-       [ ] Signals and Scoring names scoring.py::combine_signals
-       [ ] Sample Run: a submission AND an appeal, as pasted text
-       [ ] At least four new commits
-       [ ] Repository URL submitted — WRITE IT DOWN
-
-     SUBMISSION CHECKLIST — unit 8
-
-       [ ] Rate limiting on /submit, with your numbers justified
-       [ ] The pasted run of status codes showing 429
-       [ ] Audit log with all nine fields, recording rejections too
-       [ ] The attack set run IN FULL, every input with an outcome
-       [ ] Ten audit log entries pasted as text
-       [ ] Five criteria across three trials
-       [ ] A diagnosis for every miss and every broken attack — stage AND mechanism
-       [ ] One improvement, with Attack Run — After
-       [ ] What's Still Broken, including the production trade
-       [ ] At least four new commits
-       [ ] The SAME repository URL as last unit
-
-     Do not delete and recreate this repository.
-     ═════════════════════════════════════════════════════════════════════ -->
-
----
-
-📖 **How to run this project: [RUNNING.md](RUNNING.md)**
+- Detection accuracy has not been established.
+- Full calibration and end-to-end coverage of all three labels remain incomplete.
+- An appeal is recorded, but no human review workflow or automatic resolution is implemented.
+- Appeal ownership is not authenticated.
+- Rate limiting remains disabled for Unit 7.
+- The model examines at most 400 tokens, while the style signal examines the accepted passage.
+- Unit 8 attack testing and three-trial acceptance evaluation are not yet completed.
