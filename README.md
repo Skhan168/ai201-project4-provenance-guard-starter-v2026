@@ -270,6 +270,28 @@ The criteria were finalized after implementation and the initial smoke test, not
 - Full calibration with genuine human writing and lightly edited AI writing remains incomplete.
 - An appeal is recorded, but no human review workflow or automatic resolution is implemented.
 - Appeal ownership is not authenticated.
-- Rate limiting remains disabled for Unit 7.
+- Rate limiting was disabled in Unit 7 and is now enabled for Unit 8; flood-test evidence appears below.
 - The model examines at most 400 tokens, while the style signal examines the accepted passage.
 - Unit 8 attack testing and three-trial acceptance evaluation are not yet completed.
+
+## Rate Limiting
+
+POST /submit is limited to 10 requests per minute and 200 requests per day for each caller identified by the limiter.
+
+Ten requests per minute allows a writer to submit a passage and several revisions while restricting rapid automated probing. A limit of 15 or more would allow the entire 15-request flood test through, while one or two would unnecessarily restrict normal revision testing. The daily limit of 200 allows sustained use while restricting longer automated probing sessions.
+
+The limiter uses in-memory storage. Restarting the service resets the counters, so this is a local testing configuration rather than a durable production setup.
+
+### Flood-test evidence
+
+Command: `python run_attacks.py --flood 15`
+
+Actual status codes:
+
+```text
+200 200 200 200 200 200 200 200 200 200 429 429 429 429 429
+```
+
+Ten submissions succeeded and five were rate limited. GET /health reported `rate_limiting: true`. GET /log confirmed that the rejected requests were recorded with `reason: "rate_limited"` and `status: "rejected"`.
+
+Full output: `results/flood_2026-11-11_2336.md`.
