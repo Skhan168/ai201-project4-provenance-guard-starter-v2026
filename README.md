@@ -262,7 +262,7 @@ My first submission exposed a placeholder label. With the assistant's help, I re
 
 I chose a maximum of 3 false positives in 10 human samples, a minimum average score gap of 0.50, and three passages to demonstrate the three labels. I explained my intended appeal and invalid-input outcomes. The assistant helped turn those choices into specific testing procedures, drafted wording, and assembled this README from the code and recorded outputs.
 
-The criteria were finalized after implementation and the initial smoke test, not before building. The full acceptance evaluation has not yet been run.
+The criteria were finalized after implementation and the initial smoke test, not before building. The full acceptance evaluation had not been run at the end of Unit 7. The completed Unit 8 before-and-after evaluations appear below.
 
 ### Current limitations
 
@@ -272,7 +272,7 @@ The criteria were finalized after implementation and the initial smoke test, not
 - Appeal ownership is not authenticated.
 - Rate limiting was disabled in Unit 7 and is now enabled for Unit 8; flood-test evidence appears below.
 - The model examines at most 400 tokens, while the style signal examines the accepted passage.
-- Unit 8 attack testing and three-trial acceptance evaluation are not yet completed.
+- Unit 8 attack testing and three-trial acceptance evaluation are completed below. Criterion 2 remains MISSED in both evaluations.
 
 ## Rate Limiting
 
@@ -310,11 +310,7 @@ My single improvement is to raise AI_THRESHOLD from 0.65 to 0.75. HUMAN_THRESHOL
 
 This widens the unsure band to reduce false accusations. The expected cost is that some AI-written passages previously labeled AI will now receive unsure. It does not improve the underlying scores or fix criterion 2's insufficient mean-score gap.
 
-The new threshold is selected using the baseline failures. Any measured improvement on this same set is an in-sample result, not evidence of generalization to unseen writing.
-
-### Measurement plan
-
-Re-run all 56 staff attacks and all five original criteria for three trials each, using the same inputs and test harness. Compare false positives, evasion outcomes, criterion verdicts, and unchanged score values before and after.
+The new threshold is selected using the baseline failures. Any measured improvement on this same set is an in-sampl
 
 # Unit 8 Testing Evidence
 
@@ -1697,3 +1693,8 @@ I used the assistant to interpret the rubric, enable the existing limiter, expla
 
 The assistant also drafted the HELD/BROKE rules, diagnoses, threshold-change proposal, and documentation from my real uploaded results. I ran the service, flood test, both complete attack sets, and both three-trial evaluations locally. This write-up was AI-assisted, not independently authored analysis; I am responsible for reviewing the judgments against the actual targets and evidence. No results were fabricated and no original criterion was revised.
 
+e result, not evidence of generalization to unseen writing.
+
+### Measurement plan
+
+Re-run all 56 staff attacks and all five original criteria for three trials each, using the same inputs and test harness. Compare false positives, evasion outcomes, criterion verdicts, and unchanged score values before and after.
