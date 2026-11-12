@@ -295,3 +295,23 @@ Actual status codes:
 Ten submissions succeeded and five were rate limited. GET /health reported `rate_limiting: true`. GET /log confirmed that the rejected requests were recorded with `reason: "rate_limited"` and `status: "rejected"`.
 
 Full output: `results/flood_2026-11-11_2336.md`.
+
+## The Improvement
+
+### Diagnosis and chosen change
+
+The baseline falsely labeled five of the eight staff human-writing samples as AI: FP02, FP03, FP04, FP05, and FP06. Their combined scores ranged from 0.65165 to 0.7062, crossing the original AI threshold of 0.65.
+
+The pipeline stages responsible are the signals, combining rule, and label mapping. Predictable human prose received high model scores; the style scores did not provide sufficient counter-evidence under equal weighting. The label mapping then converted these overlapping pattern scores into AI assessments.
+
+For example, FP05 received model score 0.8005 and style score 0.6119. Equal weighting produced 0.7062, so the original threshold assigned an AI label to staff-provided human writing.
+
+My single improvement is to raise AI_THRESHOLD from 0.65 to 0.75. HUMAN_THRESHOLD remains 0.35. Both signal implementations, both weights, the model, validation, and label wording remain unchanged.
+
+This widens the unsure band to reduce false accusations. The expected cost is that some AI-written passages previously labeled AI will now receive unsure. It does not improve the underlying scores or fix criterion 2's insufficient mean-score gap.
+
+The new threshold is selected using the baseline failures. Any measured improvement on this same set is an in-sample result, not evidence of generalization to unseen writing.
+
+### Measurement plan
+
+Re-run all 56 staff attacks and all five original criteria for three trials each, using the same inputs and test harness. Compare false positives, evasion outcomes, criterion verdicts, and unchanged score values before and after.

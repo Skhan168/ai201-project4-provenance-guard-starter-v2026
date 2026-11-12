@@ -1,0 +1,1989 @@
+{
+  "label": "after",
+  "run_id": "751803d5bc",
+  "health": {
+    "http_status": 200,
+    "response": {
+      "detector_loaded": true,
+      "detector_model": "gpt2",
+      "log_entries": 247,
+      "ok": true,
+      "rate_limiting": true
+    }
+  },
+  "criteria": [
+    {
+      "criterion": 1,
+      "name": "False positives",
+      "target": "At most 3/10 AI; all ten scored",
+      "trials": [
+        {
+          "trial": 1,
+          "metric": "0/10 AI; 10/10 scored",
+          "passed": true,
+          "evidence": [
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.3456,
+                "content_id": "c9c14385-2d1e-4982-b4d0-7d3844963374",
+                "guess": "human",
+                "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+                "model_score": 0.3563,
+                "status": "decided",
+                "style_score": 0.3349
+              },
+              "request": {
+                "text": "The aspect of Dr. Rappaccini's control over his daughter has caught my attention while reading Rappaccini's Daughter. Right from Beatrice’s childhood, her father raised her in a garden full of lethal flora which consequently made her immune to the plant’s poison but made her very self lethal to any living thing. It's important to note that Beatrice never approved such a thing to happen but her father conducted these experiments because of his science.",
+                "creator_id": "eval_751803d5bc_c1_t1_i1"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5204,
+                "content_id": "d50a9525-ae46-46f2-8708-13997e0f0b6c",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5759,
+                "status": "decided",
+                "style_score": 0.4649
+              },
+              "request": {
+                "text": "This situation reminds me of the real life case of Chinese scientist He Jiankui, who created what became known as the CRISPR babies. In 2018, Jiankui modified the DNA of human embryos using CRISPR technology and made babies resistant to HIV infection. Two twin girls and then another baby boy were born due to this experiment. Inappropriate actions of the researcher, such as lacking ethics board approval and incomplete consent of parents, violated the law and led to illegal practice of medicine, for which he was sentenced to 3 years in jail (Marchione, 2019).",
+                "creator_id": "eval_751803d5bc_c1_t1_i2"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.50615,
+                "content_id": "8269d1e7-8840-4203-8dc3-3835b7d91a65",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.439,
+                "status": "decided",
+                "style_score": 0.5733
+              },
+              "request": {
+                "text": "There are some obvious similarities between this story and the events related to Beatrice. In both stories, a scientist performs an experiment with a person's biological identity without obtaining permission or refusal from the person. Beatrice cannot decide whether she would become a poisonous person and CRISPR babies had no ability to refuse having their DNA changed. Second similarity is that both experiments have irreversible consequences; Beatrice remains poisonous forever, CRISPR babies inherit modified DNA throughout their lives.",
+                "creator_id": "eval_751803d5bc_c1_t1_i3"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.61365,
+                "content_id": "14fc583a-4009-440d-8699-e0371a80dfb4",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7186,
+                "status": "decided",
+                "style_score": 0.5087
+              },
+              "request": {
+                "text": "During the 19th century, a man had the power to commit his wife to a mental institution without any approval from her, a hearing, or actual proof of her illness. At the same time, men were supposed to go through a jury trial before being admitted to a mental institution. Such an occurrence happened to Elizabeth Packard in 1860. Packard was committed by her husband according to Illinois law because of her disagreement with the man's religion. She was kept in a mental hospital for three years before a jury trial lasted only seven minutes and declared her sane (Illinois Courts).",
+                "creator_id": "eval_751803d5bc_c1_t1_i4"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5199,
+                "content_id": "4ea22afb-0ce9-4db9-a20b-847cd0bd2e7a",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6579,
+                "status": "decided",
+                "style_score": 0.3819
+              },
+              "request": {
+                "text": "Today, only people who are dangerous to themselves or others may be committed involuntarily. Besides that, they are granted a hearing and an attorney (Congressional Research Service). The biggest difference is that today everyone gets the same due process no matter their sex or marital status. However, there are several aspects which remain the same. People in a mental health crisis can still be committed against their will today, and there's still debate over how much power doctors and family members should have when a patient disagrees with their treatment.",
+                "creator_id": "eval_751803d5bc_c1_t1_i5"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5132,
+                "content_id": "719ec310-bfa9-414e-9217-cad352132a0c",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5931,
+                "status": "decided",
+                "style_score": 0.4333
+              },
+              "request": {
+                "text": "In high school, I took AP US History, and the Civil War was taught through battles, leaders, slavery, and political aspects only. I do not remember learning much about medicine. If it came up, it was a quick mention of amputations or how many soldiers died. I never learned how the medical side actually worked. The thing that surprised me the most in Ina Dixon's article, Modern Medicine's Civil War Legacy, is the large number of soldiers who died not on the battlefield but from infections and illnesses. Dysentery, typhoid fever, and pneumonia spread widely among the army because of poor hygiene and unhealthy diet of soldiers. Moreover, bloodletting and mercury were applied as methods of treatment at the beginning of the war.",
+                "creator_id": "eval_751803d5bc_c1_t1_i6"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.55385,
+                "content_id": "f1803d86-f914-47e4-a35c-686f843c53d1",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5552,
+                "status": "decided",
+                "style_score": 0.5525
+              },
+              "request": {
+                "text": "In my opinion, the most valuable legacy of the war in terms of medicine is the development of an organized healthcare system. The Army of the Potomac got an organized system of care thanks to Jonathan Letterman, who created an ambulance and evacuation process. Triage, the treatment based on the level of urgency, developed. Hospitals started working in an organized manner; there were leaders such as William Hammond and Clara Barton who established certain standards of care.",
+                "creator_id": "eval_751803d5bc_c1_t1_i7"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.62205,
+                "content_id": "eeada1d7-e379-4a1a-9576-93e4d3ae34e3",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7039,
+                "status": "decided",
+                "style_score": 0.5402
+              },
+              "request": {
+                "text": "The use of anesthesia during surgery was also widely used during the Civil War period. These concepts are still used today. The system of triage is used in emergency departments, and ambulances transport the patients to hospitals. As a student studying information technology, I see the importance of the system of evacuation and its efficiency. Also, during this time period thousands of doctors and nurses gained valuable experience during the war.",
+                "creator_id": "eval_751803d5bc_c1_t1_i8"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.46025,
+                "content_id": "5d12f03c-9750-43fe-9bda-7c4e53979cd8",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.3208,
+                "status": "decided",
+                "style_score": 0.5997
+              },
+              "request": {
+                "text": "While reading the story by Anton Chekhov “A Doctor’s Visit,” I could not help but compare it to the piano composition “Opening” by Philip Glass. The repeating melody creates an impression of anxiety, as though one was trying to move forward but remaining stuck in one’s own thoughts. It makes me think of Liza’s sleepless nights and the overall atmosphere of anxiety around the factory. Although there is no production due to the holiday, the constant metal strikes of the watchman interrupt the silence.",
+                "creator_id": "eval_751803d5bc_c1_t1_i9"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5357000000000001,
+                "content_id": "ec36ea14-4087-4f26-859f-3818227b6eee",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5598,
+                "status": "decided",
+                "style_score": 0.5116
+              },
+              "request": {
+                "text": "In the process of reading Eudora Welty's \"A Worn Path,\" I found similarities between the text and Lange's photograph called \"Migrant Mother.\" The picture represents a mother with her children around her. While gazing at something far away, she puts one hand on her face. Two children lean against her shoulders while she holds an infant. The first aspect that caught my attention was the children's dependence on her and her worried and exhausted look. In connection with the text, I thought about Phoenix Jackson taking care of her ill grandson. Even though he is her grandson and not a son, the same feeling of having to care for somebody else came to mind while analyzing these two works. Though it is hard to say what the woman is thinking from her expression, I see worry and determination in her expression, which reminds me of Phoenix.",
+                "creator_id": "eval_751803d5bc_c1_t1_i10"
+              }
+            }
+          ]
+        },
+        {
+          "trial": 2,
+          "metric": "0/10 AI; 10/10 scored",
+          "passed": true,
+          "evidence": [
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.3456,
+                "content_id": "a64588c9-76e0-4450-8414-a73c5d1a1bea",
+                "guess": "human",
+                "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+                "model_score": 0.3563,
+                "status": "decided",
+                "style_score": 0.3349
+              },
+              "request": {
+                "text": "The aspect of Dr. Rappaccini's control over his daughter has caught my attention while reading Rappaccini's Daughter. Right from Beatrice’s childhood, her father raised her in a garden full of lethal flora which consequently made her immune to the plant’s poison but made her very self lethal to any living thing. It's important to note that Beatrice never approved such a thing to happen but her father conducted these experiments because of his science.",
+                "creator_id": "eval_751803d5bc_c1_t2_i1"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5204,
+                "content_id": "e84cf177-a4bd-480f-8d8a-6223e7338a23",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5759,
+                "status": "decided",
+                "style_score": 0.4649
+              },
+              "request": {
+                "text": "This situation reminds me of the real life case of Chinese scientist He Jiankui, who created what became known as the CRISPR babies. In 2018, Jiankui modified the DNA of human embryos using CRISPR technology and made babies resistant to HIV infection. Two twin girls and then another baby boy were born due to this experiment. Inappropriate actions of the researcher, such as lacking ethics board approval and incomplete consent of parents, violated the law and led to illegal practice of medicine, for which he was sentenced to 3 years in jail (Marchione, 2019).",
+                "creator_id": "eval_751803d5bc_c1_t2_i2"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.50615,
+                "content_id": "220be3b5-067f-4e6c-b950-7b2b918a60b6",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.439,
+                "status": "decided",
+                "style_score": 0.5733
+              },
+              "request": {
+                "text": "There are some obvious similarities between this story and the events related to Beatrice. In both stories, a scientist performs an experiment with a person's biological identity without obtaining permission or refusal from the person. Beatrice cannot decide whether she would become a poisonous person and CRISPR babies had no ability to refuse having their DNA changed. Second similarity is that both experiments have irreversible consequences; Beatrice remains poisonous forever, CRISPR babies inherit modified DNA throughout their lives.",
+                "creator_id": "eval_751803d5bc_c1_t2_i3"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.61365,
+                "content_id": "8ea3c546-1b5a-45e8-bc97-1beb42d54653",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7186,
+                "status": "decided",
+                "style_score": 0.5087
+              },
+              "request": {
+                "text": "During the 19th century, a man had the power to commit his wife to a mental institution without any approval from her, a hearing, or actual proof of her illness. At the same time, men were supposed to go through a jury trial before being admitted to a mental institution. Such an occurrence happened to Elizabeth Packard in 1860. Packard was committed by her husband according to Illinois law because of her disagreement with the man's religion. She was kept in a mental hospital for three years before a jury trial lasted only seven minutes and declared her sane (Illinois Courts).",
+                "creator_id": "eval_751803d5bc_c1_t2_i4"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5199,
+                "content_id": "6c12590f-0d53-423e-8a86-a43a257765ed",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6579,
+                "status": "decided",
+                "style_score": 0.3819
+              },
+              "request": {
+                "text": "Today, only people who are dangerous to themselves or others may be committed involuntarily. Besides that, they are granted a hearing and an attorney (Congressional Research Service). The biggest difference is that today everyone gets the same due process no matter their sex or marital status. However, there are several aspects which remain the same. People in a mental health crisis can still be committed against their will today, and there's still debate over how much power doctors and family members should have when a patient disagrees with their treatment.",
+                "creator_id": "eval_751803d5bc_c1_t2_i5"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5132,
+                "content_id": "cfefc96a-5ee1-4ad5-a6bb-5794be880b51",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5931,
+                "status": "decided",
+                "style_score": 0.4333
+              },
+              "request": {
+                "text": "In high school, I took AP US History, and the Civil War was taught through battles, leaders, slavery, and political aspects only. I do not remember learning much about medicine. If it came up, it was a quick mention of amputations or how many soldiers died. I never learned how the medical side actually worked. The thing that surprised me the most in Ina Dixon's article, Modern Medicine's Civil War Legacy, is the large number of soldiers who died not on the battlefield but from infections and illnesses. Dysentery, typhoid fever, and pneumonia spread widely among the army because of poor hygiene and unhealthy diet of soldiers. Moreover, bloodletting and mercury were applied as methods of treatment at the beginning of the war.",
+                "creator_id": "eval_751803d5bc_c1_t2_i6"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.55385,
+                "content_id": "ad930b54-d9cc-4b51-9492-9c65f5b470be",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5552,
+                "status": "decided",
+                "style_score": 0.5525
+              },
+              "request": {
+                "text": "In my opinion, the most valuable legacy of the war in terms of medicine is the development of an organized healthcare system. The Army of the Potomac got an organized system of care thanks to Jonathan Letterman, who created an ambulance and evacuation process. Triage, the treatment based on the level of urgency, developed. Hospitals started working in an organized manner; there were leaders such as William Hammond and Clara Barton who established certain standards of care.",
+                "creator_id": "eval_751803d5bc_c1_t2_i7"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.62205,
+                "content_id": "dc66875a-5388-4af0-b2bf-b3cc9eba2a02",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7039,
+                "status": "decided",
+                "style_score": 0.5402
+              },
+              "request": {
+                "text": "The use of anesthesia during surgery was also widely used during the Civil War period. These concepts are still used today. The system of triage is used in emergency departments, and ambulances transport the patients to hospitals. As a student studying information technology, I see the importance of the system of evacuation and its efficiency. Also, during this time period thousands of doctors and nurses gained valuable experience during the war.",
+                "creator_id": "eval_751803d5bc_c1_t2_i8"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.46025,
+                "content_id": "ef02e7d9-4dd3-4d92-b828-90e7944f354f",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.3208,
+                "status": "decided",
+                "style_score": 0.5997
+              },
+              "request": {
+                "text": "While reading the story by Anton Chekhov “A Doctor’s Visit,” I could not help but compare it to the piano composition “Opening” by Philip Glass. The repeating melody creates an impression of anxiety, as though one was trying to move forward but remaining stuck in one’s own thoughts. It makes me think of Liza’s sleepless nights and the overall atmosphere of anxiety around the factory. Although there is no production due to the holiday, the constant metal strikes of the watchman interrupt the silence.",
+                "creator_id": "eval_751803d5bc_c1_t2_i9"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5357000000000001,
+                "content_id": "647234a1-fdaa-4e7d-a4d2-eb16cb7b2638",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5598,
+                "status": "decided",
+                "style_score": 0.5116
+              },
+              "request": {
+                "text": "In the process of reading Eudora Welty's \"A Worn Path,\" I found similarities between the text and Lange's photograph called \"Migrant Mother.\" The picture represents a mother with her children around her. While gazing at something far away, she puts one hand on her face. Two children lean against her shoulders while she holds an infant. The first aspect that caught my attention was the children's dependence on her and her worried and exhausted look. In connection with the text, I thought about Phoenix Jackson taking care of her ill grandson. Even though he is her grandson and not a son, the same feeling of having to care for somebody else came to mind while analyzing these two works. Though it is hard to say what the woman is thinking from her expression, I see worry and determination in her expression, which reminds me of Phoenix.",
+                "creator_id": "eval_751803d5bc_c1_t2_i10"
+              }
+            }
+          ]
+        },
+        {
+          "trial": 3,
+          "metric": "0/10 AI; 10/10 scored",
+          "passed": true,
+          "evidence": [
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.3456,
+                "content_id": "5d9e78e7-079e-405b-b660-21ee6761d9e2",
+                "guess": "human",
+                "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+                "model_score": 0.3563,
+                "status": "decided",
+                "style_score": 0.3349
+              },
+              "request": {
+                "text": "The aspect of Dr. Rappaccini's control over his daughter has caught my attention while reading Rappaccini's Daughter. Right from Beatrice’s childhood, her father raised her in a garden full of lethal flora which consequently made her immune to the plant’s poison but made her very self lethal to any living thing. It's important to note that Beatrice never approved such a thing to happen but her father conducted these experiments because of his science.",
+                "creator_id": "eval_751803d5bc_c1_t3_i1"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5204,
+                "content_id": "f2355cfb-fc67-4f19-b5dc-e36281b2356c",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5759,
+                "status": "decided",
+                "style_score": 0.4649
+              },
+              "request": {
+                "text": "This situation reminds me of the real life case of Chinese scientist He Jiankui, who created what became known as the CRISPR babies. In 2018, Jiankui modified the DNA of human embryos using CRISPR technology and made babies resistant to HIV infection. Two twin girls and then another baby boy were born due to this experiment. Inappropriate actions of the researcher, such as lacking ethics board approval and incomplete consent of parents, violated the law and led to illegal practice of medicine, for which he was sentenced to 3 years in jail (Marchione, 2019).",
+                "creator_id": "eval_751803d5bc_c1_t3_i2"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.50615,
+                "content_id": "89950983-4e24-48ab-affe-6edf17dba6aa",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.439,
+                "status": "decided",
+                "style_score": 0.5733
+              },
+              "request": {
+                "text": "There are some obvious similarities between this story and the events related to Beatrice. In both stories, a scientist performs an experiment with a person's biological identity without obtaining permission or refusal from the person. Beatrice cannot decide whether she would become a poisonous person and CRISPR babies had no ability to refuse having their DNA changed. Second similarity is that both experiments have irreversible consequences; Beatrice remains poisonous forever, CRISPR babies inherit modified DNA throughout their lives.",
+                "creator_id": "eval_751803d5bc_c1_t3_i3"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.61365,
+                "content_id": "c3d61034-b964-42f9-b5bf-9b6ec283ff92",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7186,
+                "status": "decided",
+                "style_score": 0.5087
+              },
+              "request": {
+                "text": "During the 19th century, a man had the power to commit his wife to a mental institution without any approval from her, a hearing, or actual proof of her illness. At the same time, men were supposed to go through a jury trial before being admitted to a mental institution. Such an occurrence happened to Elizabeth Packard in 1860. Packard was committed by her husband according to Illinois law because of her disagreement with the man's religion. She was kept in a mental hospital for three years before a jury trial lasted only seven minutes and declared her sane (Illinois Courts).",
+                "creator_id": "eval_751803d5bc_c1_t3_i4"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5199,
+                "content_id": "8b559fab-e03f-44e1-a164-991a5db84d0e",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6579,
+                "status": "decided",
+                "style_score": 0.3819
+              },
+              "request": {
+                "text": "Today, only people who are dangerous to themselves or others may be committed involuntarily. Besides that, they are granted a hearing and an attorney (Congressional Research Service). The biggest difference is that today everyone gets the same due process no matter their sex or marital status. However, there are several aspects which remain the same. People in a mental health crisis can still be committed against their will today, and there's still debate over how much power doctors and family members should have when a patient disagrees with their treatment.",
+                "creator_id": "eval_751803d5bc_c1_t3_i5"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5132,
+                "content_id": "1627beff-df67-4f73-8a12-193631d527ff",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5931,
+                "status": "decided",
+                "style_score": 0.4333
+              },
+              "request": {
+                "text": "In high school, I took AP US History, and the Civil War was taught through battles, leaders, slavery, and political aspects only. I do not remember learning much about medicine. If it came up, it was a quick mention of amputations or how many soldiers died. I never learned how the medical side actually worked. The thing that surprised me the most in Ina Dixon's article, Modern Medicine's Civil War Legacy, is the large number of soldiers who died not on the battlefield but from infections and illnesses. Dysentery, typhoid fever, and pneumonia spread widely among the army because of poor hygiene and unhealthy diet of soldiers. Moreover, bloodletting and mercury were applied as methods of treatment at the beginning of the war.",
+                "creator_id": "eval_751803d5bc_c1_t3_i6"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.55385,
+                "content_id": "45b56079-1f2e-4b44-9cfd-b97503f5715b",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5552,
+                "status": "decided",
+                "style_score": 0.5525
+              },
+              "request": {
+                "text": "In my opinion, the most valuable legacy of the war in terms of medicine is the development of an organized healthcare system. The Army of the Potomac got an organized system of care thanks to Jonathan Letterman, who created an ambulance and evacuation process. Triage, the treatment based on the level of urgency, developed. Hospitals started working in an organized manner; there were leaders such as William Hammond and Clara Barton who established certain standards of care.",
+                "creator_id": "eval_751803d5bc_c1_t3_i7"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.62205,
+                "content_id": "8543fabf-0ef3-4342-9967-b1dda928750e",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7039,
+                "status": "decided",
+                "style_score": 0.5402
+              },
+              "request": {
+                "text": "The use of anesthesia during surgery was also widely used during the Civil War period. These concepts are still used today. The system of triage is used in emergency departments, and ambulances transport the patients to hospitals. As a student studying information technology, I see the importance of the system of evacuation and its efficiency. Also, during this time period thousands of doctors and nurses gained valuable experience during the war.",
+                "creator_id": "eval_751803d5bc_c1_t3_i8"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.46025,
+                "content_id": "ee9fd8ce-3901-44f7-aff4-3c0d70dfd160",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.3208,
+                "status": "decided",
+                "style_score": 0.5997
+              },
+              "request": {
+                "text": "While reading the story by Anton Chekhov “A Doctor’s Visit,” I could not help but compare it to the piano composition “Opening” by Philip Glass. The repeating melody creates an impression of anxiety, as though one was trying to move forward but remaining stuck in one’s own thoughts. It makes me think of Liza’s sleepless nights and the overall atmosphere of anxiety around the factory. Although there is no production due to the holiday, the constant metal strikes of the watchman interrupt the silence.",
+                "creator_id": "eval_751803d5bc_c1_t3_i9"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5357000000000001,
+                "content_id": "27877b70-cb2b-47f8-816d-94d924862132",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5598,
+                "status": "decided",
+                "style_score": 0.5116
+              },
+              "request": {
+                "text": "In the process of reading Eudora Welty's \"A Worn Path,\" I found similarities between the text and Lange's photograph called \"Migrant Mother.\" The picture represents a mother with her children around her. While gazing at something far away, she puts one hand on her face. Two children lean against her shoulders while she holds an infant. The first aspect that caught my attention was the children's dependence on her and her worried and exhausted look. In connection with the text, I thought about Phoenix Jackson taking care of her ill grandson. Even though he is her grandson and not a son, the same feeling of having to care for somebody else came to mind while analyzing these two works. Though it is hard to say what the woman is thinking from her expression, I see worry and determination in her expression, which reminds me of Phoenix.",
+                "creator_id": "eval_751803d5bc_c1_t3_i10"
+              }
+            }
+          ]
+        }
+      ],
+      "verdict": "MET"
+    },
+    {
+      "criterion": 2,
+      "name": "Score spread",
+      "target": "AI mean minus human mean >= 0.50; all 20 scored",
+      "trials": [
+        {
+          "trial": 1,
+          "metric": "gap 0.12975 (human 0.51907, AI 0.64882)",
+          "passed": false,
+          "evidence": [
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.3456,
+                "content_id": "1633fc83-5120-4919-ab6d-0c4fed3c2719",
+                "guess": "human",
+                "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+                "model_score": 0.3563,
+                "status": "decided",
+                "style_score": 0.3349
+              },
+              "request": {
+                "text": "The aspect of Dr. Rappaccini's control over his daughter has caught my attention while reading Rappaccini's Daughter. Right from Beatrice’s childhood, her father raised her in a garden full of lethal flora which consequently made her immune to the plant’s poison but made her very self lethal to any living thing. It's important to note that Beatrice never approved such a thing to happen but her father conducted these experiments because of his science.",
+                "creator_id": "eval_751803d5bc_c2_t1_i1"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5204,
+                "content_id": "e9aab618-0bf4-4b49-a3ac-c5401b4ca4aa",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5759,
+                "status": "decided",
+                "style_score": 0.4649
+              },
+              "request": {
+                "text": "This situation reminds me of the real life case of Chinese scientist He Jiankui, who created what became known as the CRISPR babies. In 2018, Jiankui modified the DNA of human embryos using CRISPR technology and made babies resistant to HIV infection. Two twin girls and then another baby boy were born due to this experiment. Inappropriate actions of the researcher, such as lacking ethics board approval and incomplete consent of parents, violated the law and led to illegal practice of medicine, for which he was sentenced to 3 years in jail (Marchione, 2019).",
+                "creator_id": "eval_751803d5bc_c2_t1_i2"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.50615,
+                "content_id": "cd2df817-a23a-4cc9-b9fc-e90d2c5466c0",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.439,
+                "status": "decided",
+                "style_score": 0.5733
+              },
+              "request": {
+                "text": "There are some obvious similarities between this story and the events related to Beatrice. In both stories, a scientist performs an experiment with a person's biological identity without obtaining permission or refusal from the person. Beatrice cannot decide whether she would become a poisonous person and CRISPR babies had no ability to refuse having their DNA changed. Second similarity is that both experiments have irreversible consequences; Beatrice remains poisonous forever, CRISPR babies inherit modified DNA throughout their lives.",
+                "creator_id": "eval_751803d5bc_c2_t1_i3"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.61365,
+                "content_id": "2f256c3a-c2a3-4266-b78b-726d608c100a",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7186,
+                "status": "decided",
+                "style_score": 0.5087
+              },
+              "request": {
+                "text": "During the 19th century, a man had the power to commit his wife to a mental institution without any approval from her, a hearing, or actual proof of her illness. At the same time, men were supposed to go through a jury trial before being admitted to a mental institution. Such an occurrence happened to Elizabeth Packard in 1860. Packard was committed by her husband according to Illinois law because of her disagreement with the man's religion. She was kept in a mental hospital for three years before a jury trial lasted only seven minutes and declared her sane (Illinois Courts).",
+                "creator_id": "eval_751803d5bc_c2_t1_i4"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5199,
+                "content_id": "5862bb7b-f42c-4712-b804-7fb701f6a8c9",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6579,
+                "status": "decided",
+                "style_score": 0.3819
+              },
+              "request": {
+                "text": "Today, only people who are dangerous to themselves or others may be committed involuntarily. Besides that, they are granted a hearing and an attorney (Congressional Research Service). The biggest difference is that today everyone gets the same due process no matter their sex or marital status. However, there are several aspects which remain the same. People in a mental health crisis can still be committed against their will today, and there's still debate over how much power doctors and family members should have when a patient disagrees with their treatment.",
+                "creator_id": "eval_751803d5bc_c2_t1_i5"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5132,
+                "content_id": "15cb87f5-f912-4bed-90a8-46b93a647442",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5931,
+                "status": "decided",
+                "style_score": 0.4333
+              },
+              "request": {
+                "text": "In high school, I took AP US History, and the Civil War was taught through battles, leaders, slavery, and political aspects only. I do not remember learning much about medicine. If it came up, it was a quick mention of amputations or how many soldiers died. I never learned how the medical side actually worked. The thing that surprised me the most in Ina Dixon's article, Modern Medicine's Civil War Legacy, is the large number of soldiers who died not on the battlefield but from infections and illnesses. Dysentery, typhoid fever, and pneumonia spread widely among the army because of poor hygiene and unhealthy diet of soldiers. Moreover, bloodletting and mercury were applied as methods of treatment at the beginning of the war.",
+                "creator_id": "eval_751803d5bc_c2_t1_i6"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.55385,
+                "content_id": "e1b00203-7290-4f3f-8221-67ac4640c501",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5552,
+                "status": "decided",
+                "style_score": 0.5525
+              },
+              "request": {
+                "text": "In my opinion, the most valuable legacy of the war in terms of medicine is the development of an organized healthcare system. The Army of the Potomac got an organized system of care thanks to Jonathan Letterman, who created an ambulance and evacuation process. Triage, the treatment based on the level of urgency, developed. Hospitals started working in an organized manner; there were leaders such as William Hammond and Clara Barton who established certain standards of care.",
+                "creator_id": "eval_751803d5bc_c2_t1_i7"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.62205,
+                "content_id": "72870f06-4ef6-4ee1-8a03-f837f802d394",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7039,
+                "status": "decided",
+                "style_score": 0.5402
+              },
+              "request": {
+                "text": "The use of anesthesia during surgery was also widely used during the Civil War period. These concepts are still used today. The system of triage is used in emergency departments, and ambulances transport the patients to hospitals. As a student studying information technology, I see the importance of the system of evacuation and its efficiency. Also, during this time period thousands of doctors and nurses gained valuable experience during the war.",
+                "creator_id": "eval_751803d5bc_c2_t1_i8"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.46025,
+                "content_id": "ca0e943d-21cc-4020-8bce-231debb4cbf4",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.3208,
+                "status": "decided",
+                "style_score": 0.5997
+              },
+              "request": {
+                "text": "While reading the story by Anton Chekhov “A Doctor’s Visit,” I could not help but compare it to the piano composition “Opening” by Philip Glass. The repeating melody creates an impression of anxiety, as though one was trying to move forward but remaining stuck in one’s own thoughts. It makes me think of Liza’s sleepless nights and the overall atmosphere of anxiety around the factory. Although there is no production due to the holiday, the constant metal strikes of the watchman interrupt the silence.",
+                "creator_id": "eval_751803d5bc_c2_t1_i9"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5357000000000001,
+                "content_id": "800ff64c-aa6c-4473-9154-66b2196eee77",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5598,
+                "status": "decided",
+                "style_score": 0.5116
+              },
+              "request": {
+                "text": "In the process of reading Eudora Welty's \"A Worn Path,\" I found similarities between the text and Lange's photograph called \"Migrant Mother.\" The picture represents a mother with her children around her. While gazing at something far away, she puts one hand on her face. Two children lean against her shoulders while she holds an infant. The first aspect that caught my attention was the children's dependence on her and her worried and exhausted look. In connection with the text, I thought about Phoenix Jackson taking care of her ill grandson. Even though he is her grandson and not a son, the same feeling of having to care for somebody else came to mind while analyzing these two works. Though it is hard to say what the woman is thinking from her expression, I see worry and determination in her expression, which reminds me of Phoenix.",
+                "creator_id": "eval_751803d5bc_c2_t1_i10"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6428,
+                "content_id": "7d952b3e-b287-433b-a082-67151f5edc6d",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6926,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of communication cannot be overstated in modern society. Effective communication provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t1_i11"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6489499999999999,
+                "content_id": "23de062b-fd5c-478e-8fd2-4a3fe22208e8",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7049,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of planning cannot be overstated in modern society. Effective planning provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t1_i12"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.64775,
+                "content_id": "8358eb61-671d-470d-a0e6-bfdc3f18580d",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7025,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of teamwork cannot be overstated in modern society. Effective teamwork provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t1_i13"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6436999999999999,
+                "content_id": "eed6ec2d-a003-4574-a158-73614064749f",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6944,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of education cannot be overstated in modern society. Effective education provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t1_i14"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6456,
+                "content_id": "27642f39-0c51-47c7-8ffe-7ea75b2aaa04",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6982,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of organization cannot be overstated in modern society. Effective organization provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t1_i15"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.64445,
+                "content_id": "99adff18-9f55-44f2-897b-0c9f65686ab6",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6959,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of documentation cannot be overstated in modern society. Effective documentation provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t1_i16"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.67215,
+                "content_id": "da62714f-40b6-4b68-9cf8-3334f7e7705c",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7354,
+                "status": "decided",
+                "style_score": 0.6089
+              },
+              "request": {
+                "text": "The importance of time management cannot be overstated in modern society. Effective time management provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t1_i17"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6392,
+                "content_id": "edf26ab7-a6e0-411b-92f3-969e9d9c8144",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.675,
+                "status": "decided",
+                "style_score": 0.6034
+              },
+              "request": {
+                "text": "The importance of public transport cannot be overstated in modern society. Effective public transport provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t1_i18"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6579,
+                "content_id": "73d7b988-5ecb-4ce8-98b4-4d1400d4c560",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7124,
+                "status": "decided",
+                "style_score": 0.6034
+              },
+              "request": {
+                "text": "The importance of community service cannot be overstated in modern society. Effective community service provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t1_i19"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.64575,
+                "content_id": "662dd788-b0b6-40ce-b1c3-71ca97643fd9",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6881,
+                "status": "decided",
+                "style_score": 0.6034
+              },
+              "request": {
+                "text": "The importance of digital literacy cannot be overstated in modern society. Effective digital literacy provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t1_i20"
+              }
+            }
+          ]
+        },
+        {
+          "trial": 2,
+          "metric": "gap 0.12975 (human 0.51907, AI 0.64882)",
+          "passed": false,
+          "evidence": [
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.3456,
+                "content_id": "2f7fabbb-213b-42b6-9a19-13aa6bc18ff9",
+                "guess": "human",
+                "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+                "model_score": 0.3563,
+                "status": "decided",
+                "style_score": 0.3349
+              },
+              "request": {
+                "text": "The aspect of Dr. Rappaccini's control over his daughter has caught my attention while reading Rappaccini's Daughter. Right from Beatrice’s childhood, her father raised her in a garden full of lethal flora which consequently made her immune to the plant’s poison but made her very self lethal to any living thing. It's important to note that Beatrice never approved such a thing to happen but her father conducted these experiments because of his science.",
+                "creator_id": "eval_751803d5bc_c2_t2_i1"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5204,
+                "content_id": "6b7cb786-bb93-4d8d-a7db-608f7f8adb12",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5759,
+                "status": "decided",
+                "style_score": 0.4649
+              },
+              "request": {
+                "text": "This situation reminds me of the real life case of Chinese scientist He Jiankui, who created what became known as the CRISPR babies. In 2018, Jiankui modified the DNA of human embryos using CRISPR technology and made babies resistant to HIV infection. Two twin girls and then another baby boy were born due to this experiment. Inappropriate actions of the researcher, such as lacking ethics board approval and incomplete consent of parents, violated the law and led to illegal practice of medicine, for which he was sentenced to 3 years in jail (Marchione, 2019).",
+                "creator_id": "eval_751803d5bc_c2_t2_i2"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.50615,
+                "content_id": "f83cbe33-d33a-40f5-bc31-977ec4fe89c8",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.439,
+                "status": "decided",
+                "style_score": 0.5733
+              },
+              "request": {
+                "text": "There are some obvious similarities between this story and the events related to Beatrice. In both stories, a scientist performs an experiment with a person's biological identity without obtaining permission or refusal from the person. Beatrice cannot decide whether she would become a poisonous person and CRISPR babies had no ability to refuse having their DNA changed. Second similarity is that both experiments have irreversible consequences; Beatrice remains poisonous forever, CRISPR babies inherit modified DNA throughout their lives.",
+                "creator_id": "eval_751803d5bc_c2_t2_i3"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.61365,
+                "content_id": "c591553e-a91d-4d1f-8d38-1858e20a151b",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7186,
+                "status": "decided",
+                "style_score": 0.5087
+              },
+              "request": {
+                "text": "During the 19th century, a man had the power to commit his wife to a mental institution without any approval from her, a hearing, or actual proof of her illness. At the same time, men were supposed to go through a jury trial before being admitted to a mental institution. Such an occurrence happened to Elizabeth Packard in 1860. Packard was committed by her husband according to Illinois law because of her disagreement with the man's religion. She was kept in a mental hospital for three years before a jury trial lasted only seven minutes and declared her sane (Illinois Courts).",
+                "creator_id": "eval_751803d5bc_c2_t2_i4"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5199,
+                "content_id": "0eec88e9-8c01-4d06-9dc4-4f054aa8205b",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6579,
+                "status": "decided",
+                "style_score": 0.3819
+              },
+              "request": {
+                "text": "Today, only people who are dangerous to themselves or others may be committed involuntarily. Besides that, they are granted a hearing and an attorney (Congressional Research Service). The biggest difference is that today everyone gets the same due process no matter their sex or marital status. However, there are several aspects which remain the same. People in a mental health crisis can still be committed against their will today, and there's still debate over how much power doctors and family members should have when a patient disagrees with their treatment.",
+                "creator_id": "eval_751803d5bc_c2_t2_i5"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5132,
+                "content_id": "aef7cde5-8505-4d7c-b267-fdcd86afb819",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5931,
+                "status": "decided",
+                "style_score": 0.4333
+              },
+              "request": {
+                "text": "In high school, I took AP US History, and the Civil War was taught through battles, leaders, slavery, and political aspects only. I do not remember learning much about medicine. If it came up, it was a quick mention of amputations or how many soldiers died. I never learned how the medical side actually worked. The thing that surprised me the most in Ina Dixon's article, Modern Medicine's Civil War Legacy, is the large number of soldiers who died not on the battlefield but from infections and illnesses. Dysentery, typhoid fever, and pneumonia spread widely among the army because of poor hygiene and unhealthy diet of soldiers. Moreover, bloodletting and mercury were applied as methods of treatment at the beginning of the war.",
+                "creator_id": "eval_751803d5bc_c2_t2_i6"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.55385,
+                "content_id": "caaf4693-3d2e-4275-b45e-1a3af1bcd92c",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5552,
+                "status": "decided",
+                "style_score": 0.5525
+              },
+              "request": {
+                "text": "In my opinion, the most valuable legacy of the war in terms of medicine is the development of an organized healthcare system. The Army of the Potomac got an organized system of care thanks to Jonathan Letterman, who created an ambulance and evacuation process. Triage, the treatment based on the level of urgency, developed. Hospitals started working in an organized manner; there were leaders such as William Hammond and Clara Barton who established certain standards of care.",
+                "creator_id": "eval_751803d5bc_c2_t2_i7"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.62205,
+                "content_id": "fa7a2a0e-be0f-4802-875b-69b29f04e59a",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7039,
+                "status": "decided",
+                "style_score": 0.5402
+              },
+              "request": {
+                "text": "The use of anesthesia during surgery was also widely used during the Civil War period. These concepts are still used today. The system of triage is used in emergency departments, and ambulances transport the patients to hospitals. As a student studying information technology, I see the importance of the system of evacuation and its efficiency. Also, during this time period thousands of doctors and nurses gained valuable experience during the war.",
+                "creator_id": "eval_751803d5bc_c2_t2_i8"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.46025,
+                "content_id": "ae7b4b2a-5a3d-416c-9433-cc68eca7d883",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.3208,
+                "status": "decided",
+                "style_score": 0.5997
+              },
+              "request": {
+                "text": "While reading the story by Anton Chekhov “A Doctor’s Visit,” I could not help but compare it to the piano composition “Opening” by Philip Glass. The repeating melody creates an impression of anxiety, as though one was trying to move forward but remaining stuck in one’s own thoughts. It makes me think of Liza’s sleepless nights and the overall atmosphere of anxiety around the factory. Although there is no production due to the holiday, the constant metal strikes of the watchman interrupt the silence.",
+                "creator_id": "eval_751803d5bc_c2_t2_i9"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5357000000000001,
+                "content_id": "2923694e-7ca4-468e-82b6-4182a1af88ba",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5598,
+                "status": "decided",
+                "style_score": 0.5116
+              },
+              "request": {
+                "text": "In the process of reading Eudora Welty's \"A Worn Path,\" I found similarities between the text and Lange's photograph called \"Migrant Mother.\" The picture represents a mother with her children around her. While gazing at something far away, she puts one hand on her face. Two children lean against her shoulders while she holds an infant. The first aspect that caught my attention was the children's dependence on her and her worried and exhausted look. In connection with the text, I thought about Phoenix Jackson taking care of her ill grandson. Even though he is her grandson and not a son, the same feeling of having to care for somebody else came to mind while analyzing these two works. Though it is hard to say what the woman is thinking from her expression, I see worry and determination in her expression, which reminds me of Phoenix.",
+                "creator_id": "eval_751803d5bc_c2_t2_i10"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6428,
+                "content_id": "c82c3b81-ed27-4d09-9a92-86a546431f1e",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6926,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of communication cannot be overstated in modern society. Effective communication provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t2_i11"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6489499999999999,
+                "content_id": "0a41f03b-a0e2-4ff4-9836-91fa7d96e8d5",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7049,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of planning cannot be overstated in modern society. Effective planning provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t2_i12"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.64775,
+                "content_id": "8bacc076-1df5-4784-a682-02ec9da3c368",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7025,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of teamwork cannot be overstated in modern society. Effective teamwork provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t2_i13"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6436999999999999,
+                "content_id": "7f59b086-f834-46c3-9b62-6cc14dfa8f03",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6944,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of education cannot be overstated in modern society. Effective education provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t2_i14"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6456,
+                "content_id": "c3ac138d-5546-4e06-9141-711f6ca38d5a",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6982,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of organization cannot be overstated in modern society. Effective organization provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t2_i15"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.64445,
+                "content_id": "542aafae-334b-46c4-ab24-3d2054803526",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6959,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of documentation cannot be overstated in modern society. Effective documentation provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t2_i16"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.67215,
+                "content_id": "2bd72f25-a28b-406b-9bb0-7bcffe4d8d80",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7354,
+                "status": "decided",
+                "style_score": 0.6089
+              },
+              "request": {
+                "text": "The importance of time management cannot be overstated in modern society. Effective time management provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t2_i17"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6392,
+                "content_id": "16b90119-4823-4f2e-ac6a-e33fc2951620",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.675,
+                "status": "decided",
+                "style_score": 0.6034
+              },
+              "request": {
+                "text": "The importance of public transport cannot be overstated in modern society. Effective public transport provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t2_i18"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6579,
+                "content_id": "01c5e579-4f83-44e0-be60-910932d5cb39",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7124,
+                "status": "decided",
+                "style_score": 0.6034
+              },
+              "request": {
+                "text": "The importance of community service cannot be overstated in modern society. Effective community service provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t2_i19"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.64575,
+                "content_id": "a9ac8eff-6bef-4144-8525-b8c38284019b",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6881,
+                "status": "decided",
+                "style_score": 0.6034
+              },
+              "request": {
+                "text": "The importance of digital literacy cannot be overstated in modern society. Effective digital literacy provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t2_i20"
+              }
+            }
+          ]
+        },
+        {
+          "trial": 3,
+          "metric": "gap 0.12975 (human 0.51907, AI 0.64882)",
+          "passed": false,
+          "evidence": [
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.3456,
+                "content_id": "505bd44a-f86f-4b17-ba1b-73831d5e0167",
+                "guess": "human",
+                "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+                "model_score": 0.3563,
+                "status": "decided",
+                "style_score": 0.3349
+              },
+              "request": {
+                "text": "The aspect of Dr. Rappaccini's control over his daughter has caught my attention while reading Rappaccini's Daughter. Right from Beatrice’s childhood, her father raised her in a garden full of lethal flora which consequently made her immune to the plant’s poison but made her very self lethal to any living thing. It's important to note that Beatrice never approved such a thing to happen but her father conducted these experiments because of his science.",
+                "creator_id": "eval_751803d5bc_c2_t3_i1"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5204,
+                "content_id": "532a9ea5-9e9a-40c6-a417-a6815fd69f0e",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5759,
+                "status": "decided",
+                "style_score": 0.4649
+              },
+              "request": {
+                "text": "This situation reminds me of the real life case of Chinese scientist He Jiankui, who created what became known as the CRISPR babies. In 2018, Jiankui modified the DNA of human embryos using CRISPR technology and made babies resistant to HIV infection. Two twin girls and then another baby boy were born due to this experiment. Inappropriate actions of the researcher, such as lacking ethics board approval and incomplete consent of parents, violated the law and led to illegal practice of medicine, for which he was sentenced to 3 years in jail (Marchione, 2019).",
+                "creator_id": "eval_751803d5bc_c2_t3_i2"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.50615,
+                "content_id": "af75cd97-e603-4bec-8f5c-c45b1d52e675",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.439,
+                "status": "decided",
+                "style_score": 0.5733
+              },
+              "request": {
+                "text": "There are some obvious similarities between this story and the events related to Beatrice. In both stories, a scientist performs an experiment with a person's biological identity without obtaining permission or refusal from the person. Beatrice cannot decide whether she would become a poisonous person and CRISPR babies had no ability to refuse having their DNA changed. Second similarity is that both experiments have irreversible consequences; Beatrice remains poisonous forever, CRISPR babies inherit modified DNA throughout their lives.",
+                "creator_id": "eval_751803d5bc_c2_t3_i3"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.61365,
+                "content_id": "ba5d892a-ba25-4e2c-a9f7-ea3280ddc46d",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7186,
+                "status": "decided",
+                "style_score": 0.5087
+              },
+              "request": {
+                "text": "During the 19th century, a man had the power to commit his wife to a mental institution without any approval from her, a hearing, or actual proof of her illness. At the same time, men were supposed to go through a jury trial before being admitted to a mental institution. Such an occurrence happened to Elizabeth Packard in 1860. Packard was committed by her husband according to Illinois law because of her disagreement with the man's religion. She was kept in a mental hospital for three years before a jury trial lasted only seven minutes and declared her sane (Illinois Courts).",
+                "creator_id": "eval_751803d5bc_c2_t3_i4"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5199,
+                "content_id": "1c473660-bb86-4158-9778-daa1eff29c29",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6579,
+                "status": "decided",
+                "style_score": 0.3819
+              },
+              "request": {
+                "text": "Today, only people who are dangerous to themselves or others may be committed involuntarily. Besides that, they are granted a hearing and an attorney (Congressional Research Service). The biggest difference is that today everyone gets the same due process no matter their sex or marital status. However, there are several aspects which remain the same. People in a mental health crisis can still be committed against their will today, and there's still debate over how much power doctors and family members should have when a patient disagrees with their treatment.",
+                "creator_id": "eval_751803d5bc_c2_t3_i5"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5132,
+                "content_id": "b11ecd18-5e0b-4c65-a8c9-30488cd88cfe",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5931,
+                "status": "decided",
+                "style_score": 0.4333
+              },
+              "request": {
+                "text": "In high school, I took AP US History, and the Civil War was taught through battles, leaders, slavery, and political aspects only. I do not remember learning much about medicine. If it came up, it was a quick mention of amputations or how many soldiers died. I never learned how the medical side actually worked. The thing that surprised me the most in Ina Dixon's article, Modern Medicine's Civil War Legacy, is the large number of soldiers who died not on the battlefield but from infections and illnesses. Dysentery, typhoid fever, and pneumonia spread widely among the army because of poor hygiene and unhealthy diet of soldiers. Moreover, bloodletting and mercury were applied as methods of treatment at the beginning of the war.",
+                "creator_id": "eval_751803d5bc_c2_t3_i6"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.55385,
+                "content_id": "78993e96-c81f-4d1e-acd0-c03df114060d",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5552,
+                "status": "decided",
+                "style_score": 0.5525
+              },
+              "request": {
+                "text": "In my opinion, the most valuable legacy of the war in terms of medicine is the development of an organized healthcare system. The Army of the Potomac got an organized system of care thanks to Jonathan Letterman, who created an ambulance and evacuation process. Triage, the treatment based on the level of urgency, developed. Hospitals started working in an organized manner; there were leaders such as William Hammond and Clara Barton who established certain standards of care.",
+                "creator_id": "eval_751803d5bc_c2_t3_i7"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.62205,
+                "content_id": "df8a2537-c56a-4f42-8938-6e2f1fa89fba",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7039,
+                "status": "decided",
+                "style_score": 0.5402
+              },
+              "request": {
+                "text": "The use of anesthesia during surgery was also widely used during the Civil War period. These concepts are still used today. The system of triage is used in emergency departments, and ambulances transport the patients to hospitals. As a student studying information technology, I see the importance of the system of evacuation and its efficiency. Also, during this time period thousands of doctors and nurses gained valuable experience during the war.",
+                "creator_id": "eval_751803d5bc_c2_t3_i8"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.46025,
+                "content_id": "8c1b1444-dccf-461f-91c1-6360930dc4ef",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.3208,
+                "status": "decided",
+                "style_score": 0.5997
+              },
+              "request": {
+                "text": "While reading the story by Anton Chekhov “A Doctor’s Visit,” I could not help but compare it to the piano composition “Opening” by Philip Glass. The repeating melody creates an impression of anxiety, as though one was trying to move forward but remaining stuck in one’s own thoughts. It makes me think of Liza’s sleepless nights and the overall atmosphere of anxiety around the factory. Although there is no production due to the holiday, the constant metal strikes of the watchman interrupt the silence.",
+                "creator_id": "eval_751803d5bc_c2_t3_i9"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.5357000000000001,
+                "content_id": "7ac4cf65-1055-4dee-931a-e1e2163781c8",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.5598,
+                "status": "decided",
+                "style_score": 0.5116
+              },
+              "request": {
+                "text": "In the process of reading Eudora Welty's \"A Worn Path,\" I found similarities between the text and Lange's photograph called \"Migrant Mother.\" The picture represents a mother with her children around her. While gazing at something far away, she puts one hand on her face. Two children lean against her shoulders while she holds an infant. The first aspect that caught my attention was the children's dependence on her and her worried and exhausted look. In connection with the text, I thought about Phoenix Jackson taking care of her ill grandson. Even though he is her grandson and not a son, the same feeling of having to care for somebody else came to mind while analyzing these two works. Though it is hard to say what the woman is thinking from her expression, I see worry and determination in her expression, which reminds me of Phoenix.",
+                "creator_id": "eval_751803d5bc_c2_t3_i10"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6428,
+                "content_id": "1124458d-bc1d-4ac0-9785-c2310888a254",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6926,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of communication cannot be overstated in modern society. Effective communication provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t3_i11"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6489499999999999,
+                "content_id": "dfeba2dd-65fc-453a-b4b4-4c3dab05ec92",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7049,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of planning cannot be overstated in modern society. Effective planning provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t3_i12"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.64775,
+                "content_id": "042ef43a-17c9-40e0-b254-cad61689a882",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7025,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of teamwork cannot be overstated in modern society. Effective teamwork provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t3_i13"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6436999999999999,
+                "content_id": "01e17318-7c92-452b-b5a7-42f505d05480",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6944,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of education cannot be overstated in modern society. Effective education provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t3_i14"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6456,
+                "content_id": "147b0abe-c1c7-45f3-8334-48499b5cffa9",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6982,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of organization cannot be overstated in modern society. Effective organization provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t3_i15"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.64445,
+                "content_id": "14065cf6-dcff-4cb3-adf5-3af992eafb03",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6959,
+                "status": "decided",
+                "style_score": 0.593
+              },
+              "request": {
+                "text": "The importance of documentation cannot be overstated in modern society. Effective documentation provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t3_i16"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.67215,
+                "content_id": "86666dec-bda7-4a43-b874-c63d238a9e70",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7354,
+                "status": "decided",
+                "style_score": 0.6089
+              },
+              "request": {
+                "text": "The importance of time management cannot be overstated in modern society. Effective time management provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t3_i17"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6392,
+                "content_id": "0033411a-e39f-47e7-96be-35d0a68cd9aa",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.675,
+                "status": "decided",
+                "style_score": 0.6034
+              },
+              "request": {
+                "text": "The importance of public transport cannot be overstated in modern society. Effective public transport provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t3_i18"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.6579,
+                "content_id": "78a3fde1-880f-4dcd-a01f-aeaa5fb1afdd",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.7124,
+                "status": "decided",
+                "style_score": 0.6034
+              },
+              "request": {
+                "text": "The importance of community service cannot be overstated in modern society. Effective community service provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t3_i19"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.64575,
+                "content_id": "92ae971e-4762-4ec0-8491-dac658a70f36",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.6881,
+                "status": "decided",
+                "style_score": 0.6034
+              },
+              "request": {
+                "text": "The importance of digital literacy cannot be overstated in modern society. Effective digital literacy provides individuals with valuable opportunities to improve their daily lives. First, a clear strategy helps people understand their responsibilities and achieve their objectives. Second, consistent effort supports meaningful progress and reduces unnecessary confusion. Finally, regular evaluation allows people to identify challenges and implement practical solutions. By following these principles, individuals and communities can achieve sustainable improvements over time.",
+                "creator_id": "eval_751803d5bc_c2_t3_i20"
+              }
+            }
+          ]
+        }
+      ],
+      "verdict": "MISSED"
+    },
+    {
+      "criterion": 3,
+      "name": "Label coverage",
+      "target": "human, unsure, ai exactly once; valid labels",
+      "trials": [
+        {
+          "trial": 1,
+          "metric": "human, unsure, ai; labels valid: True",
+          "passed": true,
+          "evidence": [
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.3194,
+                "content_id": "69cc4093-b40a-404f-bc18-9f4d6c2baf99",
+                "guess": "human",
+                "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+                "model_score": 0.3212,
+                "status": "decided",
+                "style_score": 0.3176
+              },
+              "request": {
+                "text": "Communication at work matters more than people say it does — and I mean the boring kind, not the away-day kind. Teams that actually tell each other things get more done. Obviously. A few things help. Regular check-ins, which everyone hates and everyone needs. Writing decisions down, so nobody has to remember what was agreed in a corridor in March. And making it genuinely safe to ask a stupid question, which is the hardest one and the one that matters most.",
+                "creator_id": "eval_751803d5bc_c3_t1_i1"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.363,
+                "content_id": "a9b67387-293e-4353-b2fa-5bf6da2f929c",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.1635,
+                "status": "decided",
+                "style_score": 0.5625
+              },
+              "request": {
+                "text": "The importance of effective communication in the workplace cannot be overstated. Teams that communicate clearly are better poistioned to achieve their objectives and avoid costly misunderstandings. Three are several strategies organisations can adopt to improve thsi. First, establishing regular check-ins ensures that information flows cosnistently between team members. Second, documenting decisions provides a reefrence point that reduces ambiguity. Finally, encouraging an environment whree questions are welcomed helps surface issues early. Implementing thsee approaches can lead to meaningful improvements in team pefrormance and overall satisfaction.",
+                "creator_id": "eval_751803d5bc_c3_t1_i2"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.82315,
+                "content_id": "4b5fada4-bef4-48dd-8fc0-1398ff19748c",
+                "guess": "ai",
+                "label": "This text shows patterns associated with AI-generated writing. This is not proof of AI use. If you wrote it yourself, you can request a review using the content ID.",
+                "model_score": 0.9792,
+                "status": "decided",
+                "style_score": 0.6671
+              },
+              "request": {
+                "text": "The importance of effective communication in the workplace cannot be overstated. Teams that communicate clearly are better positioned to achieve their objectives and avoid costly m\n\nThe importance of effective communication in the workplace cannot be overstated. Teams that communicate clearly are better positioned to achieve their objectives and avoid costly m\n\nThe importance of effective communication in the workplace cannot be overstated. Teams that communicate clearly are better positioned to achieve their objectives and avoid costly m",
+                "creator_id": "eval_751803d5bc_c3_t1_i3"
+              }
+            }
+          ]
+        },
+        {
+          "trial": 2,
+          "metric": "human, unsure, ai; labels valid: True",
+          "passed": true,
+          "evidence": [
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.3194,
+                "content_id": "ead776e4-31f9-484f-8033-7e4baf8b898a",
+                "guess": "human",
+                "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+                "model_score": 0.3212,
+                "status": "decided",
+                "style_score": 0.3176
+              },
+              "request": {
+                "text": "Communication at work matters more than people say it does — and I mean the boring kind, not the away-day kind. Teams that actually tell each other things get more done. Obviously. A few things help. Regular check-ins, which everyone hates and everyone needs. Writing decisions down, so nobody has to remember what was agreed in a corridor in March. And making it genuinely safe to ask a stupid question, which is the hardest one and the one that matters most.",
+                "creator_id": "eval_751803d5bc_c3_t2_i1"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.363,
+                "content_id": "4d78d0f3-61cf-43e6-958f-837fcf03af10",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.1635,
+                "status": "decided",
+                "style_score": 0.5625
+              },
+              "request": {
+                "text": "The importance of effective communication in the workplace cannot be overstated. Teams that communicate clearly are better poistioned to achieve their objectives and avoid costly misunderstandings. Three are several strategies organisations can adopt to improve thsi. First, establishing regular check-ins ensures that information flows cosnistently between team members. Second, documenting decisions provides a reefrence point that reduces ambiguity. Finally, encouraging an environment whree questions are welcomed helps surface issues early. Implementing thsee approaches can lead to meaningful improvements in team pefrormance and overall satisfaction.",
+                "creator_id": "eval_751803d5bc_c3_t2_i2"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.82315,
+                "content_id": "9d03a7f7-8db5-4999-8a92-239012c13457",
+                "guess": "ai",
+                "label": "This text shows patterns associated with AI-generated writing. This is not proof of AI use. If you wrote it yourself, you can request a review using the content ID.",
+                "model_score": 0.9792,
+                "status": "decided",
+                "style_score": 0.6671
+              },
+              "request": {
+                "text": "The importance of effective communication in the workplace cannot be overstated. Teams that communicate clearly are better positioned to achieve their objectives and avoid costly m\n\nThe importance of effective communication in the workplace cannot be overstated. Teams that communicate clearly are better positioned to achieve their objectives and avoid costly m\n\nThe importance of effective communication in the workplace cannot be overstated. Teams that communicate clearly are better positioned to achieve their objectives and avoid costly m",
+                "creator_id": "eval_751803d5bc_c3_t2_i3"
+              }
+            }
+          ]
+        },
+        {
+          "trial": 3,
+          "metric": "human, unsure, ai; labels valid: True",
+          "passed": true,
+          "evidence": [
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.3194,
+                "content_id": "54856165-1d4d-430e-8352-43a32b97077e",
+                "guess": "human",
+                "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+                "model_score": 0.3212,
+                "status": "decided",
+                "style_score": 0.3176
+              },
+              "request": {
+                "text": "Communication at work matters more than people say it does — and I mean the boring kind, not the away-day kind. Teams that actually tell each other things get more done. Obviously. A few things help. Regular check-ins, which everyone hates and everyone needs. Writing decisions down, so nobody has to remember what was agreed in a corridor in March. And making it genuinely safe to ask a stupid question, which is the hardest one and the one that matters most.",
+                "creator_id": "eval_751803d5bc_c3_t3_i1"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.363,
+                "content_id": "5154bcb9-f933-4730-ad4d-c971912526d3",
+                "guess": "unsure",
+                "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+                "model_score": 0.1635,
+                "status": "decided",
+                "style_score": 0.5625
+              },
+              "request": {
+                "text": "The importance of effective communication in the workplace cannot be overstated. Teams that communicate clearly are better poistioned to achieve their objectives and avoid costly misunderstandings. Three are several strategies organisations can adopt to improve thsi. First, establishing regular check-ins ensures that information flows cosnistently between team members. Second, documenting decisions provides a reefrence point that reduces ambiguity. Finally, encouraging an environment whree questions are welcomed helps surface issues early. Implementing thsee approaches can lead to meaningful improvements in team pefrormance and overall satisfaction.",
+                "creator_id": "eval_751803d5bc_c3_t3_i2"
+              }
+            },
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.82315,
+                "content_id": "e60bbc9c-ae55-486a-a7ba-f9bedfd434cc",
+                "guess": "ai",
+                "label": "This text shows patterns associated with AI-generated writing. This is not proof of AI use. If you wrote it yourself, you can request a review using the content ID.",
+                "model_score": 0.9792,
+                "status": "decided",
+                "style_score": 0.6671
+              },
+              "request": {
+                "text": "The importance of effective communication in the workplace cannot be overstated. Teams that communicate clearly are better positioned to achieve their objectives and avoid costly m\n\nThe importance of effective communication in the workplace cannot be overstated. Teams that communicate clearly are better positioned to achieve their objectives and avoid costly m\n\nThe importance of effective communication in the workplace cannot be overstated. Teams that communicate clearly are better positioned to achieve their objectives and avoid costly m",
+                "creator_id": "eval_751803d5bc_c3_t3_i3"
+              }
+            }
+          ]
+        }
+      ],
+      "verdict": "MET"
+    },
+    {
+      "criterion": 4,
+      "name": "Appeal path",
+      "target": "200, same ID, under_review; original + later appeal in log",
+      "trials": [
+        {
+          "trial": 1,
+          "metric": "appeal 200; original + later appeal: True",
+          "passed": true,
+          "evidence": [
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.3456,
+                "content_id": "c71ec7f9-ee9b-41de-a22a-b22ec6a84361",
+                "guess": "human",
+                "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+                "model_score": 0.3563,
+                "status": "decided",
+                "style_score": 0.3349
+              },
+              "request": {
+                "text": "The aspect of Dr. Rappaccini's control over his daughter has caught my attention while reading Rappaccini's Daughter. Right from Beatrice’s childhood, her father raised her in a garden full of lethal flora which consequently made her immune to the plant’s poison but made her very self lethal to any living thing. It's important to note that Beatrice never approved such a thing to happen but her father conducted these experiments because of his science.",
+                "creator_id": "eval_751803d5bc_c4_t1_i1"
+              }
+            },
+            {
+              "appeal_request": {
+                "content_id": "c71ec7f9-ee9b-41de-a22a-b22ec6a84361",
+                "reasoning": "I wrote this passage myself and request review of its automated assessment."
+              },
+              "appeal_result": {
+                "http_status": 200,
+                "response": {
+                  "content_id": "c71ec7f9-ee9b-41de-a22a-b22ec6a84361",
+                  "message": "Your appeal was recorded and the submission is under review.",
+                  "status": "under_review"
+                }
+              },
+              "log_http_status": 200,
+              "matching_log_entries": [
+                {
+                  "combined_score": 0.3456,
+                  "content_id": "c71ec7f9-ee9b-41de-a22a-b22ec6a84361",
+                  "creator_id": "eval_751803d5bc_c4_t1_i1",
+                  "guess": "human",
+                  "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+                  "model_score": 0.3563,
+                  "status": "decided",
+                  "style_score": 0.3349,
+                  "timestamp": "2026-11-12T05:48:41+00:00"
+                },
+                {
+                  "content_id": "c71ec7f9-ee9b-41de-a22a-b22ec6a84361",
+                  "creator_id": "eval_751803d5bc_c4_t1_i1",
+                  "event": "appeal",
+                  "reasoning": "I wrote this passage myself and request review of its automated assessment.",
+                  "status": "under_review",
+                  "timestamp": "2026-11-12T05:48:41+00:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "trial": 2,
+          "metric": "appeal 200; original + later appeal: True",
+          "passed": true,
+          "evidence": [
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.3456,
+                "content_id": "bf6b31ec-cca8-41e2-9bdd-831748758be1",
+                "guess": "human",
+                "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+                "model_score": 0.3563,
+                "status": "decided",
+                "style_score": 0.3349
+              },
+              "request": {
+                "text": "The aspect of Dr. Rappaccini's control over his daughter has caught my attention while reading Rappaccini's Daughter. Right from Beatrice’s childhood, her father raised her in a garden full of lethal flora which consequently made her immune to the plant’s poison but made her very self lethal to any living thing. It's important to note that Beatrice never approved such a thing to happen but her father conducted these experiments because of his science.",
+                "creator_id": "eval_751803d5bc_c4_t2_i1"
+              }
+            },
+            {
+              "appeal_request": {
+                "content_id": "bf6b31ec-cca8-41e2-9bdd-831748758be1",
+                "reasoning": "I wrote this passage myself and request review of its automated assessment."
+              },
+              "appeal_result": {
+                "http_status": 200,
+                "response": {
+                  "content_id": "bf6b31ec-cca8-41e2-9bdd-831748758be1",
+                  "message": "Your appeal was recorded and the submission is under review.",
+                  "status": "under_review"
+                }
+              },
+              "log_http_status": 200,
+              "matching_log_entries": [
+                {
+                  "combined_score": 0.3456,
+                  "content_id": "bf6b31ec-cca8-41e2-9bdd-831748758be1",
+                  "creator_id": "eval_751803d5bc_c4_t2_i1",
+                  "guess": "human",
+                  "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+                  "model_score": 0.3563,
+                  "status": "decided",
+                  "style_score": 0.3349,
+                  "timestamp": "2026-11-12T05:48:41+00:00"
+                },
+                {
+                  "content_id": "bf6b31ec-cca8-41e2-9bdd-831748758be1",
+                  "creator_id": "eval_751803d5bc_c4_t2_i1",
+                  "event": "appeal",
+                  "reasoning": "I wrote this passage myself and request review of its automated assessment.",
+                  "status": "under_review",
+                  "timestamp": "2026-11-12T05:48:41+00:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "trial": 3,
+          "metric": "appeal 200; original + later appeal: True",
+          "passed": true,
+          "evidence": [
+            {
+              "http_status": 200,
+              "response": {
+                "confidence": 0.3456,
+                "content_id": "eecec905-9d77-4961-ba01-44a198dddd9e",
+                "guess": "human",
+                "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+                "model_score": 0.3563,
+                "status": "decided",
+                "style_score": 0.3349
+              },
+              "request": {
+                "text": "The aspect of Dr. Rappaccini's control over his daughter has caught my attention while reading Rappaccini's Daughter. Right from Beatrice’s childhood, her father raised her in a garden full of lethal flora which consequently made her immune to the plant’s poison but made her very self lethal to any living thing. It's important to note that Beatrice never approved such a thing to happen but her father conducted these experiments because of his science.",
+                "creator_id": "eval_751803d5bc_c4_t3_i1"
+              }
+            },
+            {
+              "appeal_request": {
+                "content_id": "eecec905-9d77-4961-ba01-44a198dddd9e",
+                "reasoning": "I wrote this passage myself and request review of its automated assessment."
+              },
+              "appeal_result": {
+                "http_status": 200,
+                "response": {
+                  "content_id": "eecec905-9d77-4961-ba01-44a198dddd9e",
+                  "message": "Your appeal was recorded and the submission is under review.",
+                  "status": "under_review"
+                }
+              },
+              "log_http_status": 200,
+              "matching_log_entries": [
+                {
+                  "combined_score": 0.3456,
+                  "content_id": "eecec905-9d77-4961-ba01-44a198dddd9e",
+                  "creator_id": "eval_751803d5bc_c4_t3_i1",
+                  "guess": "human",
+                  "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+                  "model_score": 0.3563,
+                  "status": "decided",
+                  "style_score": 0.3349,
+                  "timestamp": "2026-11-12T05:48:41+00:00"
+                },
+                {
+                  "content_id": "eecec905-9d77-4961-ba01-44a198dddd9e",
+                  "creator_id": "eval_751803d5bc_c4_t3_i1",
+                  "event": "appeal",
+                  "reasoning": "I wrote this passage myself and request review of its automated assessment.",
+                  "status": "under_review",
+                  "timestamp": "2026-11-12T05:48:41+00:00"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "verdict": "MET"
+    },
+    {
+      "criterion": 5,
+      "name": "Bad input",
+      "target": "400, 400, 413; error messages; no guess",
+      "trials": [
+        {
+          "trial": 1,
+          "metric": "3/3 correct; codes 400, 400, 413",
+          "passed": true,
+          "evidence": [
+            {
+              "http_status": 400,
+              "response": {
+                "error": "text must be a non-empty string."
+              },
+              "request": {
+                "creator_id": "eval_751803d5bc_c5_t1_i1"
+              }
+            },
+            {
+              "http_status": 400,
+              "response": {
+                "error": "text must be a non-empty string."
+              },
+              "request": {
+                "text": "",
+                "creator_id": "eval_751803d5bc_c5_t1_i2"
+              }
+            },
+            {
+              "http_status": 413,
+              "response": {
+                "error": "text must not exceed 10000 characters."
+              },
+              "request": {
+                "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "creator_id": "eval_751803d5bc_c5_t1_i3"
+              }
+            }
+          ]
+        },
+        {
+          "trial": 2,
+          "metric": "3/3 correct; codes 400, 400, 413",
+          "passed": true,
+          "evidence": [
+            {
+              "http_status": 400,
+              "response": {
+                "error": "text must be a non-empty string."
+              },
+              "request": {
+                "creator_id": "eval_751803d5bc_c5_t2_i1"
+              }
+            },
+            {
+              "http_status": 400,
+              "response": {
+                "error": "text must be a non-empty string."
+              },
+              "request": {
+                "text": "",
+                "creator_id": "eval_751803d5bc_c5_t2_i2"
+              }
+            },
+            {
+              "http_status": 413,
+              "response": {
+                "error": "text must not exceed 10000 characters."
+              },
+              "request": {
+                "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "creator_id": "eval_751803d5bc_c5_t2_i3"
+              }
+            }
+          ]
+        },
+        {
+          "trial": 3,
+          "metric": "3/3 correct; codes 400, 400, 413",
+          "passed": true,
+          "evidence": [
+            {
+              "http_status": 400,
+              "response": {
+                "error": "text must be a non-empty string."
+              },
+              "request": {
+                "creator_id": "eval_751803d5bc_c5_t3_i1"
+              }
+            },
+            {
+              "http_status": 400,
+              "response": {
+                "error": "text must be a non-empty string."
+              },
+              "request": {
+                "text": "",
+                "creator_id": "eval_751803d5bc_c5_t3_i2"
+              }
+            },
+            {
+              "http_status": 413,
+              "response": {
+                "error": "text must not exceed 10000 characters."
+              },
+              "request": {
+                "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "creator_id": "eval_751803d5bc_c5_t3_i3"
+              }
+            }
+          ]
+        }
+      ],
+      "verdict": "MET"
+    }
+  ],
+  "method": "Three HTTP trials per criterion. Unique synthetic creator IDs isolate content tests from flood tests. Same inputs and harness must be used before and after."
+}
