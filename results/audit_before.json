@@ -1,0 +1,774 @@
+{
+  "count": 77,
+  "entries": [
+    {
+      "combined_score": 0.7363999999999999,
+      "content_id": "dcf21714-8abf-4b2a-b749-c8a82db12e89",
+      "creator_id": "fawaz-test",
+      "guess": "ai",
+      "label": "PLACEHOLDER \u2014 write the high-confidence AI label.",
+      "model_score": 0.6928,
+      "status": "decided",
+      "style_score": 0.78,
+      "timestamp": "2026-11-05T02:24:11+00:00"
+    },
+    {
+      "combined_score": 0.7363999999999999,
+      "content_id": "766059e7-e844-4a7d-94b7-8d3913655127",
+      "creator_id": "fawaz-test",
+      "guess": "ai",
+      "label": "This text shows patterns associated with AI-generated writing. This is not proof of AI use. If you wrote it yourself, you can request a review using the content ID.",
+      "model_score": 0.6928,
+      "status": "decided",
+      "style_score": 0.78,
+      "timestamp": "2026-11-05T02:27:57+00:00"
+    },
+    {
+      "content_id": "766059e7-e844-4a7d-94b7-8d3913655127",
+      "creator_id": "fawaz-test",
+      "event": "appeal",
+      "reasoning": "This is a test of the appeal workflow. Please review the automated assessment.",
+      "status": "under_review",
+      "timestamp": "2026-11-05T02:28:25+00:00"
+    },
+    {
+      "combined_score": 0.10595,
+      "content_id": "0e5bb8fa-ab5c-4499-a784-616b70e0074b",
+      "creator_id": "calibration-test",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.1492,
+      "status": "decided",
+      "style_score": 0.0627,
+      "timestamp": "2026-11-05T03:06:07+00:00"
+    },
+    {
+      "combined_score": 0.4359,
+      "content_id": "556f27d9-589f-42fd-8436-1ff85dadf4d3",
+      "creator_id": "calibration-test",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.7682,
+      "status": "decided",
+      "style_score": 0.1036,
+      "timestamp": "2026-11-05T03:06:07+00:00"
+    },
+    {
+      "combined_score": 0.7363999999999999,
+      "content_id": "965f036f-d237-49ac-a4dc-d32c4b769314",
+      "creator_id": "calibration-test",
+      "guess": "ai",
+      "label": "This text shows patterns associated with AI-generated writing. This is not proof of AI use. If you wrote it yourself, you can request a review using the content ID.",
+      "model_score": 0.6928,
+      "status": "decided",
+      "style_score": 0.78,
+      "timestamp": "2026-11-05T03:06:07+00:00"
+    },
+    {
+      "combined_score": 0.2849,
+      "content_id": "0c83671e-d628-45e3-947a-de5aea8929a8",
+      "creator_id": "flood_tester",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.2587,
+      "status": "decided",
+      "style_score": 0.3111,
+      "timestamp": "2026-11-12T04:36:37+00:00"
+    },
+    {
+      "combined_score": 0.2849,
+      "content_id": "b8976e8e-fea2-4cb8-be33-e19f24936bc3",
+      "creator_id": "flood_tester",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.2587,
+      "status": "decided",
+      "style_score": 0.3111,
+      "timestamp": "2026-11-12T04:36:37+00:00"
+    },
+    {
+      "combined_score": 0.2849,
+      "content_id": "9042ae35-607a-4e2b-862d-1ece3d73abfb",
+      "creator_id": "flood_tester",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.2587,
+      "status": "decided",
+      "style_score": 0.3111,
+      "timestamp": "2026-11-12T04:36:37+00:00"
+    },
+    {
+      "combined_score": 0.2849,
+      "content_id": "4ed1ce52-881b-435c-bcb3-a66ec661cda8",
+      "creator_id": "flood_tester",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.2587,
+      "status": "decided",
+      "style_score": 0.3111,
+      "timestamp": "2026-11-12T04:36:37+00:00"
+    },
+    {
+      "combined_score": 0.2849,
+      "content_id": "602f22a8-23d3-477e-acb2-536c806f30e8",
+      "creator_id": "flood_tester",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.2587,
+      "status": "decided",
+      "style_score": 0.3111,
+      "timestamp": "2026-11-12T04:36:37+00:00"
+    },
+    {
+      "combined_score": 0.2849,
+      "content_id": "f7ebfc8c-5200-436c-92a0-0dd4e1bd3f1e",
+      "creator_id": "flood_tester",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.2587,
+      "status": "decided",
+      "style_score": 0.3111,
+      "timestamp": "2026-11-12T04:36:38+00:00"
+    },
+    {
+      "combined_score": 0.2849,
+      "content_id": "8605e031-9dcb-4e0c-bdbb-3431d11ecb9c",
+      "creator_id": "flood_tester",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.2587,
+      "status": "decided",
+      "style_score": 0.3111,
+      "timestamp": "2026-11-12T04:36:38+00:00"
+    },
+    {
+      "combined_score": 0.2849,
+      "content_id": "4801d685-dc12-4ead-b159-e9e6ba9ca87d",
+      "creator_id": "flood_tester",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.2587,
+      "status": "decided",
+      "style_score": 0.3111,
+      "timestamp": "2026-11-12T04:36:38+00:00"
+    },
+    {
+      "combined_score": 0.2849,
+      "content_id": "4b23d444-6be3-429c-9594-f50839c3d2bd",
+      "creator_id": "flood_tester",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.2587,
+      "status": "decided",
+      "style_score": 0.3111,
+      "timestamp": "2026-11-12T04:36:38+00:00"
+    },
+    {
+      "combined_score": 0.2849,
+      "content_id": "7cde1c4c-ce4a-4731-a0ed-e84a2ef1cd68",
+      "creator_id": "flood_tester",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.2587,
+      "status": "decided",
+      "style_score": 0.3111,
+      "timestamp": "2026-11-12T04:36:38+00:00"
+    },
+    {
+      "creator_id": "flood_tester",
+      "event": "rejected",
+      "limit": "10 per 1 minute",
+      "reason": "rate_limited",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:36:38+00:00"
+    },
+    {
+      "creator_id": "flood_tester",
+      "event": "rejected",
+      "limit": "10 per 1 minute",
+      "reason": "rate_limited",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:36:38+00:00"
+    },
+    {
+      "creator_id": "flood_tester",
+      "event": "rejected",
+      "limit": "10 per 1 minute",
+      "reason": "rate_limited",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:36:38+00:00"
+    },
+    {
+      "creator_id": "flood_tester",
+      "event": "rejected",
+      "limit": "10 per 1 minute",
+      "reason": "rate_limited",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:36:38+00:00"
+    },
+    {
+      "creator_id": "flood_tester",
+      "event": "rejected",
+      "limit": "10 per 1 minute",
+      "reason": "rate_limited",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:36:38+00:00"
+    },
+    {
+      "combined_score": 0.363,
+      "content_id": "3afd3622-3aed-4eca-9122-3fce532e1a23",
+      "creator_id": "attacker_EV01",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.1635,
+      "status": "decided",
+      "style_score": 0.5625,
+      "timestamp": "2026-11-12T04:55:53+00:00"
+    },
+    {
+      "combined_score": 0.38755,
+      "content_id": "e504a427-ea02-4baa-8bfa-113a2e554a6a",
+      "creator_id": "attacker_EV02",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5943,
+      "status": "decided",
+      "style_score": 0.1808,
+      "timestamp": "2026-11-12T04:55:54+00:00"
+    },
+    {
+      "combined_score": 0.53835,
+      "content_id": "caeaa55f-d33f-4821-9551-c16e76975f85",
+      "creator_id": "attacker_EV03",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.6662,
+      "status": "decided",
+      "style_score": 0.4105,
+      "timestamp": "2026-11-12T04:55:54+00:00"
+    },
+    {
+      "combined_score": 0.5829500000000001,
+      "content_id": "f9f91526-ea7b-45fd-ba9f-060e6f7830c5",
+      "creator_id": "attacker_EV04",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.6114,
+      "status": "decided",
+      "style_score": 0.5545,
+      "timestamp": "2026-11-12T04:55:54+00:00"
+    },
+    {
+      "combined_score": 0.3194,
+      "content_id": "ef78b088-d1fe-46ad-9ff8-f43ef06ee206",
+      "creator_id": "attacker_EV05",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.3212,
+      "status": "decided",
+      "style_score": 0.3176,
+      "timestamp": "2026-11-12T04:55:54+00:00"
+    },
+    {
+      "combined_score": 0.33635,
+      "content_id": "7210d32e-2244-4298-a789-856fca403590",
+      "creator_id": "attacker_EV06",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.5727,
+      "status": "decided",
+      "style_score": 0.1,
+      "timestamp": "2026-11-12T04:55:55+00:00"
+    },
+    {
+      "combined_score": 0.48845000000000005,
+      "content_id": "3107ec37-57be-4eba-93ff-3d9b92876432",
+      "creator_id": "attacker_EV07",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5862,
+      "status": "decided",
+      "style_score": 0.3907,
+      "timestamp": "2026-11-12T04:55:55+00:00"
+    },
+    {
+      "combined_score": 0.3626,
+      "content_id": "9903ff4b-5636-4ca4-853b-d75036905903",
+      "creator_id": "attacker_EV08",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.2452,
+      "status": "decided",
+      "style_score": 0.48,
+      "timestamp": "2026-11-12T04:55:55+00:00"
+    },
+    {
+      "combined_score": 0.5505,
+      "content_id": "b643accf-0ada-4cfa-ba64-e14e659abe95",
+      "creator_id": "attacker_EV09",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.7042,
+      "status": "decided",
+      "style_score": 0.3968,
+      "timestamp": "2026-11-12T04:55:55+00:00"
+    },
+    {
+      "combined_score": 0.82315,
+      "content_id": "e9d2ccdc-da8f-4cbe-b8a3-e293b9e528c9",
+      "creator_id": "attacker_EV10",
+      "guess": "ai",
+      "label": "This text shows patterns associated with AI-generated writing. This is not proof of AI use. If you wrote it yourself, you can request a review using the content ID.",
+      "model_score": 0.9792,
+      "status": "decided",
+      "style_score": 0.6671,
+      "timestamp": "2026-11-12T04:55:55+00:00"
+    },
+    {
+      "combined_score": 0.5386,
+      "content_id": "01af9434-42dc-494b-836d-1f01220e067e",
+      "creator_id": "attacker_FP01",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.6175,
+      "status": "decided",
+      "style_score": 0.4597,
+      "timestamp": "2026-11-12T04:55:56+00:00"
+    },
+    {
+      "combined_score": 0.6605000000000001,
+      "content_id": "9e6b1a03-ed4b-4e4b-a6b8-0fdea1563bf1",
+      "creator_id": "attacker_FP02",
+      "guess": "ai",
+      "label": "This text shows patterns associated with AI-generated writing. This is not proof of AI use. If you wrote it yourself, you can request a review using the content ID.",
+      "model_score": 0.7387,
+      "status": "decided",
+      "style_score": 0.5823,
+      "timestamp": "2026-11-12T04:55:56+00:00"
+    },
+    {
+      "combined_score": 0.6668000000000001,
+      "content_id": "97ac69a2-b4f3-4ee3-ac7b-e7dfa1787836",
+      "creator_id": "attacker_FP03",
+      "guess": "ai",
+      "label": "This text shows patterns associated with AI-generated writing. This is not proof of AI use. If you wrote it yourself, you can request a review using the content ID.",
+      "model_score": 0.8051,
+      "status": "decided",
+      "style_score": 0.5285,
+      "timestamp": "2026-11-12T04:55:56+00:00"
+    },
+    {
+      "combined_score": 0.6517999999999999,
+      "content_id": "1ea42c16-0569-4a17-8c18-8ef1748eeab1",
+      "creator_id": "attacker_FP04",
+      "guess": "ai",
+      "label": "This text shows patterns associated with AI-generated writing. This is not proof of AI use. If you wrote it yourself, you can request a review using the content ID.",
+      "model_score": 0.8329,
+      "status": "decided",
+      "style_score": 0.4707,
+      "timestamp": "2026-11-12T04:55:56+00:00"
+    },
+    {
+      "combined_score": 0.7061999999999999,
+      "content_id": "083912a8-008c-4790-a513-d47ea7ec6da0",
+      "creator_id": "attacker_FP05",
+      "guess": "ai",
+      "label": "This text shows patterns associated with AI-generated writing. This is not proof of AI use. If you wrote it yourself, you can request a review using the content ID.",
+      "model_score": 0.8005,
+      "status": "decided",
+      "style_score": 0.6119,
+      "timestamp": "2026-11-12T04:55:56+00:00"
+    },
+    {
+      "combined_score": 0.65165,
+      "content_id": "64ec0626-f05b-4b85-811d-c8bfaa424cde",
+      "creator_id": "attacker_FP06",
+      "guess": "ai",
+      "label": "This text shows patterns associated with AI-generated writing. This is not proof of AI use. If you wrote it yourself, you can request a review using the content ID.",
+      "model_score": 0.8814,
+      "status": "decided",
+      "style_score": 0.4219,
+      "timestamp": "2026-11-12T04:55:57+00:00"
+    },
+    {
+      "combined_score": 0.64625,
+      "content_id": "fc9909e7-f87b-4b24-8f2b-2f9b6e428dce",
+      "creator_id": "attacker_FP07",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.8816,
+      "status": "decided",
+      "style_score": 0.4109,
+      "timestamp": "2026-11-12T04:55:57+00:00"
+    },
+    {
+      "combined_score": 0.35509999999999997,
+      "content_id": "f50f9d7a-3f1c-45b4-a592-4042b0da5d13",
+      "creator_id": "attacker_FP08",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3223,
+      "status": "decided",
+      "style_score": 0.3879,
+      "timestamp": "2026-11-12T04:55:57+00:00"
+    },
+    {
+      "combined_score": 0.3631,
+      "content_id": "f44c2c2e-68e8-4df5-bd05-ecd0427352bd",
+      "creator_id": "attacker_PI01",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4625,
+      "status": "decided",
+      "style_score": 0.2637,
+      "timestamp": "2026-11-12T04:55:57+00:00"
+    },
+    {
+      "combined_score": 0.23259999999999997,
+      "content_id": "7036b9c4-7f34-4d80-a1f6-1a07370e29fb",
+      "creator_id": "attacker_PI02",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.2044,
+      "status": "decided",
+      "style_score": 0.2608,
+      "timestamp": "2026-11-12T04:55:57+00:00"
+    },
+    {
+      "combined_score": 0.5262,
+      "content_id": "5939b1bc-a3e9-4ca3-a37a-ced9c12c9079",
+      "creator_id": "attacker_PI03",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5943,
+      "status": "decided",
+      "style_score": 0.4581,
+      "timestamp": "2026-11-12T04:55:57+00:00"
+    },
+    {
+      "combined_score": 0.4743,
+      "content_id": "abb91121-45c7-4ad1-b53f-0d3fc069d13d",
+      "creator_id": "attacker_PI04",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4998,
+      "status": "decided",
+      "style_score": 0.4488,
+      "timestamp": "2026-11-12T04:55:58+00:00"
+    },
+    {
+      "combined_score": 0.5267,
+      "content_id": "eda8ecb8-8b6a-4ad2-9ca3-a2d084b05e94",
+      "creator_id": "attacker_PI05",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.6401,
+      "status": "decided",
+      "style_score": 0.4133,
+      "timestamp": "2026-11-12T04:55:58+00:00"
+    },
+    {
+      "combined_score": 0.51155,
+      "content_id": "d8e69f00-e68c-47ce-8831-9442d3ce7aa0",
+      "creator_id": "attacker_PI06",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5583,
+      "status": "decided",
+      "style_score": 0.4648,
+      "timestamp": "2026-11-12T04:55:58+00:00"
+    },
+    {
+      "creator_id": "attacker_MF01",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "text must be a non-empty string.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:58+00:00"
+    },
+    {
+      "creator_id": "attacker_MF02",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "Text is too short to score. Submit a few sentences.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:58+00:00"
+    },
+    {
+      "combined_score": 0.15,
+      "content_id": "298bb64e-89a6-4e9a-8a21-11975c800e20",
+      "creator_id": "attacker_MF03",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.0,
+      "status": "decided",
+      "style_score": 0.3,
+      "timestamp": "2026-11-12T04:55:58+00:00"
+    },
+    {
+      "creator_id": "attacker_MF04",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "text must contain words recognized by this service.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:58+00:00"
+    },
+    {
+      "combined_score": 0.6488,
+      "content_id": "a0962514-2875-4a51-b8c9-2bfb2d6c77a2",
+      "creator_id": "attacker_MF05",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.9976,
+      "status": "decided",
+      "style_score": 0.3,
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "creator_id": "attacker_MF06",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "text must contain words recognized by this service.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "creator_id": "attacker_MF07",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "text must contain words recognized by this service.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "creator_id": "attacker_MF08",
+      "event": "rejected",
+      "http_status": 413,
+      "reason": "text must not exceed 10000 characters.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "creator_id": "attacker_RQ01",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "text must be a non-empty string.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "creator_id": "unknown",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "creator_id must be a non-empty string.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "creator_id": "attacker_RQ03",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "text must be a non-empty string.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "creator_id": "attacker_RQ04",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "text must be a non-empty string.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "creator_id": "attacker_RQ05",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "text must be a non-empty string.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "creator_id": "unknown",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "creator_id must be a non-empty string.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "creator_id": "unknown",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "Request body must be a JSON object.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "creator_id": "unknown",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "Request body must be a JSON object.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "creator_id": "unknown",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "Request body must be a JSON object.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "creator_id": "unknown",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "Request body must be a JSON object.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "creator_id": "unknown",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "Request body must be a JSON object.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "creator_id": "attacker_RQ12",
+      "event": "rejected",
+      "http_status": 400,
+      "reason": "text must be a non-empty string.",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "combined_score": 0.16435,
+      "content_id": "5cf36efd-46f6-40ea-8c4f-824aed15dae3",
+      "creator_id": "attacker_flood",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.0287,
+      "status": "decided",
+      "style_score": 0.3,
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "combined_score": 0.16435,
+      "content_id": "45b1a41f-b1d0-44db-a8f1-67f9ecf06cef",
+      "creator_id": "attacker_flood",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.0287,
+      "status": "decided",
+      "style_score": 0.3,
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "combined_score": 0.16435,
+      "content_id": "5c947989-d074-4ad5-a895-dc3c103b5e3c",
+      "creator_id": "attacker_flood",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.0287,
+      "status": "decided",
+      "style_score": 0.3,
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "combined_score": 0.16435,
+      "content_id": "8e798ac4-6ad3-4176-ab95-4308feb608c8",
+      "creator_id": "attacker_flood",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.0287,
+      "status": "decided",
+      "style_score": 0.3,
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "combined_score": 0.16435,
+      "content_id": "3bede21b-f3fb-4980-88c0-c967275c11bd",
+      "creator_id": "attacker_flood",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.0287,
+      "status": "decided",
+      "style_score": 0.3,
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "combined_score": 0.16435,
+      "content_id": "2e959734-4c73-4fc1-8d5f-0b91e113cb1c",
+      "creator_id": "attacker_flood",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.0287,
+      "status": "decided",
+      "style_score": 0.3,
+      "timestamp": "2026-11-12T04:55:59+00:00"
+    },
+    {
+      "combined_score": 0.16435,
+      "content_id": "290e4a73-b5f7-419e-bf8e-748cc0324c55",
+      "creator_id": "attacker_flood",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.0287,
+      "status": "decided",
+      "style_score": 0.3,
+      "timestamp": "2026-11-12T04:56:00+00:00"
+    },
+    {
+      "combined_score": 0.16435,
+      "content_id": "0e8eb887-3248-4134-8551-89784568d9d0",
+      "creator_id": "attacker_flood",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.0287,
+      "status": "decided",
+      "style_score": 0.3,
+      "timestamp": "2026-11-12T04:56:00+00:00"
+    },
+    {
+      "combined_score": 0.16435,
+      "content_id": "ecfb4378-fb35-47f4-a91c-812799a98378",
+      "creator_id": "attacker_flood",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.0287,
+      "status": "decided",
+      "style_score": 0.3,
+      "timestamp": "2026-11-12T04:56:00+00:00"
+    },
+    {
+      "combined_score": 0.16435,
+      "content_id": "78f437ad-99ca-43d5-9017-2695d703f51c",
+      "creator_id": "attacker_flood",
+      "guess": "human",
+      "label": "This text shows patterns associated with human writing. This assessment does not verify who wrote it.",
+      "model_score": 0.0287,
+      "status": "decided",
+      "style_score": 0.3,
+      "timestamp": "2026-11-12T04:56:00+00:00"
+    },
+    {
+      "creator_id": "attacker_flood",
+      "event": "rejected",
+      "limit": "10 per 1 minute",
+      "reason": "rate_limited",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:56:00+00:00"
+    },
+    {
+      "creator_id": "attacker_flood",
+      "event": "rejected",
+      "limit": "10 per 1 minute",
+      "reason": "rate_limited",
+      "status": "rejected",
+      "timestamp": "2026-11-12T04:56:00+00:00"
+    }
+  ]
+}
