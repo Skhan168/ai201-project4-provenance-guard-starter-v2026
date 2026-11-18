@@ -1698,3 +1698,43 @@ e result, not evidence of generalization to unseen writing.
 ### Measurement plan
 
 Re-run all 56 staff attacks and all five original criteria for three trials each, using the same inputs and test harness. Compare false positives, evasion outcomes, criterion verdicts, and unchanged score values before and after.
+
+## Capstone
+
+**What This Extends**
+
+This capstone extends my existing Provenance Guard service from Units 7 and 8. The service already scores submitted writing, returns explanatory labels, records decisions and appeals, and limits submission rates. The new work is a request-level operational logging layer that records request inputs, response outputs, HTTP status codes, and duration for completed requests, including rejected requests. I will use these records to measure runtime and evaluate the operational layer without changing the authorship detector.
+
+**The Shape**
+
+I chose Shape A: deploy and instrument. I will use Path B: local with logs. The extension is a request-level operational record around the existing service, supported by reproducible running instructions and measured runtime cost.
+
+Out of scope: changing the model, style signal, scoring weights, or label thresholds; adding authentication or a human-review interface; and hosting the model online. Existing audit evidence will be preserved. Tests will use synthetic inputs rather than private writing because request logs will contain submitted data.
+
+**Running It**
+
+The service will run locally using a single documented start command. I will update RUNNING.md with the actual environment, dependency versions, model-file requirements, and setup instructions, then verify those instructions from a clean checkout.
+
+**Instrumentation**
+
+Planned; not yet implemented or measured.
+
+**What It Costs**
+
+Not yet measured.
+
+**Run Log and Verdicts**
+
+Capstone acceptance criteria and test results are not yet recorded.
+
+**The Improvement**
+
+No capstone improvement has been selected. I will choose one after examining the baseline test results.
+
+**What's Still Broken**
+
+The existing audit log does not measure request duration or consistently capture request inputs and response outputs. Invalid appeal requests are not recorded there. The capstone will add a separate operational log while preserving the existing audit history.
+
+**How I Used AI**
+
+I asked the assistant to inspect my existing service and distinguish existing functionality from a new capstone extension. It identified gaps in request-level measurement and outdated running instructions, and helped draft this scope. I will update this section with a second specific moment after the work occurs.
