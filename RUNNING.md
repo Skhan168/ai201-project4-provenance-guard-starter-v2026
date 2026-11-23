@@ -1,3 +1,60 @@
+# Running Provenance Guard (Capstone run path)
+
+This is the path measured in the capstone evaluation. It is a local run
+with logs (Path B). The original starter notes are kept below for history.
+
+## Environment
+
+- Python 3.11.9, in a virtual environment (.venv).
+- Dependencies: pip install -r requirements.txt (includes torch and
+  transformers; versions are pinned in requirements.txt).
+- Model files: the local GPT-2 model used by detector.py is downloaded
+  on first use, about 550 MB. Running python detector.py once downloads
+  it and scores a sample. The measured runs used an already-downloaded model.
+- No API key and no hosted service are needed.
+
+## Setup
+
+    python -m venv .venv
+    .venv\Scripts\Activate.ps1
+    pip install -r requirements.txt
+    python detector.py
+
+## Start the service
+
+    python run_local.py
+
+run_local.py loads the detector model before the server accepts requests
+(detector.warm_up()), then serves on http://127.0.0.1:5000 with debug mode,
+the reloader and threading turned off. Startup waits several seconds for
+the model to load; it prints a ready message when it is done.
+
+Check it with GET /health, which reports detector_loaded.
+
+## Run the capstone evaluation (second terminal)
+
+    python capstone_eval.py --label before
+    python capstone_eval.py --label after
+
+Each run sends three trials of the five criteria in criteria.md and then
+measures ten additional warm requests. Reports are saved to results/ as
+JSON and Markdown. Request-level records are appended to
+logs/operational.jsonl. The service must already be running, and its
+rate-limit counters reset when it restarts.
+
+Note: the committed before report was produced before the startup
+warm-up change. Re-running --label before now would measure the changed code.
+
+## Why this is local
+
+torch plus GPT-2 does not fit a 512 MB free host (see the memory
+arithmetic in the starter notes below), so this project uses a local run
+with logs instead of a hosted deployment.
+
+---
+
+# Starter notes (historical)
+
 # Running Provenance Guard
 
 Everything about how the starter works.
