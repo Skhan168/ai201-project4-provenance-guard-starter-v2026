@@ -1,65 +1,37 @@
-# Acceptance criteria — Provenance Guard
+# Capstone acceptance criteria — Provenance Guard
+These criteria cover the request-level operational logging extension. They are recorded before capstone implementation measurements and acceptance results. The original project criteria are preserved in criteria_unit7_unit8.md.
 
-These targets were recorded in Unit 7 after initial implementation and a submission-and-appeal smoke test, but before the full acceptance evaluation.
 
----
+Test conventions: A valid submission contains a JSON object with a nonempty creator_id and an English passage of three complete sentences totaling 50–100 whitespace-separated words. Use fixed synthetic passages, unchanged between before and after tests. Send each request identifier in the X-Request-ID header and match it against the request_id field in the operational log. Use a fresh creator_id for each request except the shared-creator sequence required by criterion 5.
 
-## 1. False positives
+Trial procedure: Perform three independent trials of every criterion before the improvement and three afterward. In each trial, perform the warm-up from criterion 4 before sending the three submissions shared by criteria 1, 2, and 4. A criterion is MET only if its target holds in all three trials.
 
-Submit 10 English passages that I wrote myself, each containing at least three sentences and between 50 and 150 words. At most 3 responses may return `guess: "ai"`. Responses labeled `unsure` do not count as AI accusations.
+## 1. Valid-submission logging coverage
+In each trial, send three valid English writing submissions to POST /submit, using a distinct request identifier for each submission. After all responses return, inspect the operational log. Each submitted request identifier must appear in exactly one record: three matching records total, with none missing and none duplicated.
 
-Why this target:
+Reason: I want every actual submission to remain traceable without wasting space on accidental duplicate records. Repeated submissions are separate requests and must not be merged.
 
-My model signal measures predictability, and my style signal measures sentence-length uniformity and vocabulary repetition. Human writing can share these patterns, so I expect some false positives. I chose a maximum of 3 out of 10 as my initial limit; more than that would make the system too quick to accuse genuine human writers.
 
----
+## 2. Operational record contents
+Inspect the three valid-submission records from criterion 1. All three must contain a nonempty timestamp, request method, request path, submitted JSON input, returned JSON output, integer HTTP status, and numeric duration in seconds greater than or equal to zero. The method, path, input, output, and status must match the requests sent and responses received. The timestamp must be parseable as an ISO 8601 date and time with a timezone.
 
-## 2. Score spread
+Reason: I need enough information to reconstruct what request occurred, when it occurred, what the service returned, and how long it took. These records describe requests, not authenticated people.
 
-Submit the 10 human-written passages from criterion 1 and 10 AI-generated English passages, each containing at least three sentences and between 50 and 150 words, to POST /submit. Calculate the arithmetic mean of the `confidence` field for each group. The AI-generated group's mean must be at least 0.50 higher than the human-written group's mean. All 20 submissions must return a successful scored response; a rejected submission is not silently excluded.
 
-Why this target:
+## 3. Empty-input rejection visibility
+In each trial, send three requests to POST /submit with text set to an empty string and a valid, nonempty creator_id. Use distinct request identifiers. All three must return HTTP 400 with a nonempty error message and no guess field. Each request must have exactly one operational record showing the submitted empty text, returned error response, HTTP 400 status, and a numeric duration in seconds greater than or equal to zero.
 
-I want human-written passages to receive substantially more human-like scores than AI-generated passages on average. Since higher combined scores mean more AI-like patterns, the 0.50 gap tests whether my two-signal scoring rule makes a meaningful distinction between the groups. It does not prove authorship.
 
----
+Reason: Rejected requests must remain traceable rather than disappear because no authorship decision was produced.
 
-## 3. Label coverage
 
-Submit three different English passages to POST /submit. Across the three responses, `guess` must contain each value exactly once: `human`, `unsure`, and `ai`. Every response must also contain a nonempty `label` explaining the assessment in plain language, with no placeholder text.
+## 4. Warm-request response time
+First, send one valid warm-up submission and wait for a successful response so the model is loaded. Do not include that request in the timing results. Then send the three valid submissions from criterion 1 one at a time, waiting for each response before sending the next. Measure each request from immediately before the client sends it until the full response is received. All three must return HTTP 200 within 90 seconds each. Faster responses pass; there is no minimum wait.
 
-Why this target:
+Reason: Ninety seconds is the longest I would personally accept waiting for a writing assessment. I am willing to allow processing time for the local model and style analysis, but a longer wait would make the service impractical for me to use.
 
-I want all three outcomes to be reachable, and I want the label to explain whether the text showed human-like patterns, AI-like patterns, or insufficient evidence to distinguish them.
 
----
+## 5. Rate-limit regression
+In each trial, use a fresh creator_id and send 11 sequential valid submissions to POST /submit, all using that same creator_id. All 11 requests must complete within a 60-second interval measured by the client. The first ten must return HTTP 200 and the eleventh must return HTTP 429 with an error response. If the sequence takes 60 seconds or longer, this criterion is MISSED rather than treated as proof that the per-minute limit worked.
 
-## 4. Appeal path
-
-Submit a valid passage to POST /submit, then send its returned `content_id` and nonempty `reasoning` to POST /appeal. The appeal must return HTTP 200, the same content ID, and `status: "under_review"`. GET /log must show the original decision and a later appeal entry containing the same content ID, the submitted reasoning, and `status: "under_review"`.
-
-Why this target:
-
-A writer whose work was flagged deserves confirmation that their challenge was received and documented. My append-only audit log must preserve the original decision and the appeal so the assessment can be examined, rather than silently erased. Confirmation does not mean a reviewer has already resolved the appeal.
-
----
-
-## 5. Bad input
-
-Send three requests to POST /submit, each with a valid `creator_id`: one with `text` missing, one with `text: ""`, and one with a text string of 10,001 characters. The first two must return HTTP 400, and the third must return HTTP 413. Each response must contain a nonempty `error` message and must not contain an authorship `guess`.
-
-Why this target:
-
-The service cannot analyze writing that was not provided, so it should tell the writer to supply valid text rather than issue an authorship judgment. The 10,000-character request limit also keeps oversized submissions out of this local-model pipeline.
-
----
-
-<!--
-UNIT 8 REVISION REMINDER
-
-Keep the original criteria when recording evaluation results.
-
-If a criterion cannot be measured or measures the wrong thing, preserve the original wording and add a revision underneath with an explanation.
-
-Do not lower a target simply because the system missed it. Record the miss, diagnose the mechanism, and measure an attempted improvement.
--->
+Reason: I want to preserve the existing protection against rapid repeated submissions while adding operational logging. Ten allowed submissions and rejection of the next one checks the configured limit without changing it.
