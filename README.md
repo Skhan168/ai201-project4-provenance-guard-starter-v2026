@@ -1713,23 +1713,23 @@ Out of scope: changing the model, style signal, scoring weights, or label thresh
 
 **Running It**
 
-The service will run locally using a single documented start command. I will update RUNNING.md with the actual environment, dependency versions, model-file requirements, and setup instructions, then verify those instructions from a clean checkout.
+The service runs locally with python run_local.py. RUNNING.md documents the environment, dependencies, and model file. These instructions were not verified from a clean checkout. See the Unit 9 Completed Evaluation and Findings section below.
 
 **Instrumentation**
 
-Planned; not yet implemented or measured.
+Implemented and measured. See Instrumentation in the Unit 9 Completed Evaluation and Findings section below.
 
 **What It Costs**
 
-Not yet measured.
+Measured. See What It Costs in the Unit 9 Completed Evaluation and Findings section below.
 
 **Run Log and Verdicts**
 
-Capstone acceptance criteria and test results are not yet recorded.
+Capstone criteria and before and after results are recorded in the Unit 9 Completed Evaluation and Findings section below.
 
 **The Improvement**
 
-No capstone improvement has been selected. I will choose one after examining the baseline test results.
+The improvement and its measured results are in the Unit 9 Completed Evaluation and Findings section below.
 
 **What's Still Broken**
 
@@ -1737,7 +1737,7 @@ The existing audit log does not measure request duration or consistently capture
 
 **How I Used AI**
 
-I asked the assistant to inspect my existing service and distinguish existing functionality from a new capstone extension. It identified gaps in request-level measurement and outdated running instructions, and helped draft this scope. I will update this section with a second specific moment after the work occurs.
+I asked the assistant to inspect my existing service and distinguish existing functionality from a new capstone extension. It identified gaps in request-level measurement and outdated running instructions, and helped draft this scope. A second specific moment is recorded in the How I Used AI subsection of the Unit 9 Completed Evaluation and Findings section below.
 
 ## Capstone Latency Breakdown
 
@@ -1764,14 +1764,12 @@ of about 20.23 seconds. These are different runs under potentially
 different conditions, so the standalone timings do not directly partition
 that HTTP request's duration.
 
-Planned improvement: call detector.warm_up() in run_local.py before
-app.run(). This should move library import and model-loading work before
+Improvement later implemented: call detector.warm_up() in run_local.py before app.run(). This should move library import and model-loading work before
 the server accepts requests. It does not remove that work or guarantee
 that the first inference will be fully warm.
 
 The tradeoff is a longer wait before the service starts accepting requests.
-After implementing the change, I will rerun all five original criteria
-for three trials each and compare the first-request and warm timings.
+The change was later implemented, and all five criteria were rerun for three trials each. See the Unit 9 Completed Evaluation and Findings section below.
 
 
 ## Unit 9 Completed Evaluation and Findings
