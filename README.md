@@ -1733,7 +1733,7 @@ The improvement and its measured results are in the Unit 9 Completed Evaluation 
 
 **What's Still Broken**
 
-The existing audit log does not measure request duration or consistently capture request inputs and response outputs. Invalid appeal requests are not recorded there. The capstone will add a separate operational log while preserving the existing audit history.
+Before this extension, the existing audit log did not measure request duration or consistently capture request inputs and response outputs. The capstone now adds a separate operational log while preserving the existing audit history. Current limitations and the next priority are documented in the What's Still Broken subsection of Unit 9 Completed Evaluation and Findings below.
 
 **How I Used AI**
 
