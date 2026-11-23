@@ -6,8 +6,7 @@ with logs (Path B). The original starter notes are kept below for history.
 ## Environment
 
 - Python 3.11.9, in a virtual environment (.venv).
-- Dependencies: pip install -r requirements.txt (includes torch and
-  transformers; versions are pinned in requirements.txt).
+- Dependencies: pip install -r requirements.txt (includes torch and transformers). requirements.txt specifies allowed version ranges, not an exact lockfile; installed versions may differ within those ranges.
 - Model files: the local GPT-2 model used by detector.py is downloaded
   on first use, about 550 MB. Running python detector.py once downloads
   it and scores a sample. The measured runs used an already-downloaded model.
