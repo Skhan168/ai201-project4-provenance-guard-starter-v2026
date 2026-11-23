@@ -29,12 +29,14 @@ import uuid
 from flask import Flask, jsonify, request
 
 import audit
+import operational
 import config
 import detector
 import scoring
 import stylometry
 
 app = Flask(__name__)
+operational.install(app)
 
 
 # ── Rate limiting — UNIT 8 ────────────────────────────────────────────────────
