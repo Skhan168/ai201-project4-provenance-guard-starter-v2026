@@ -284,15 +284,15 @@ def main():
         "",
         "Actual first-trial HTTP output for criteria 1, 2, and 4:",
         "```json",
-        json.dumps(trials["valid"], indent=2),[0]
+        json.dumps(trials[0]["valid"], indent=2),
         "```",
         "Actual first-trial HTTP output for criterion 3:",
         "```json",
-        json.dumps(trials["invalid"], indent=2),[0]
+        json.dumps(trials[0]["invalid"], indent=2),
         "```",
         "Actual first-trial HTTP output for criterion 5:",
         "```json",
-        json.dumps(trials["rate_limit"], indent=2),[0]
+        json.dumps(trials[0]["rate_limit"], indent=2),
         "```",
         "Operational records produced by operational.py::"
         "install.<locals>.finish_operational_request:",
