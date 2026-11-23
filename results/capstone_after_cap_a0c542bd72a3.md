@@ -1,0 +1,1696 @@
+Capstone after results
+
+Producer: capstone_eval.py::main, run_trial, send.
+
+| Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
+|---|---|---|---|---|---|
+| 1. Logging coverage | 3/3 exactly once | 3/3 exactly once | 3/3 exactly once | 3/3 exactly once | MET |
+| 2. Record contents | 3/3 complete and matching | 3/3 complete and matching | 3/3 complete and matching | 3/3 complete and matching | MET |
+| 3. Empty-input visibility | 3/3 HTTP 400 and logged | 3/3 rejected and logged | 3/3 rejected and logged | 3/3 rejected and logged | MET |
+| 4. Warm latency | 3/3 HTTP 200 within 90s after warmup | 3/3 within 90s; warmup=True; max=0.1848s | 3/3 within 90s; warmup=True; max=0.2018s | 3/3 within 90s; warmup=True; max=0.2038s | MET |
+| 5. Rate-limit regression | 10 HTTP 200 then 429; sequence under 60s | codes=[200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 429]; elapsed=1.9975s | codes=[200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 429]; elapsed=1.9905s | codes=[200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 429]; elapsed=1.9025s | MET |
+
+Cost measurement complete: True
+Mean warm client elapsed seconds: 0.18985289000002012
+100 people x 1 request each x mean seconds: 18.985289000002012
+
+Actual first-trial HTTP output for criteria 1, 2, and 4:
+```json
+[
+  {
+    "request_id": "5a149713-12ed-4c53-a585-42ffd5604ecf",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_valid_1_0"
+    },
+    "http_status": 200,
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "367dfd8e-85e7-400b-b974-9612c856a57e",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "client_seconds": 0.14874500000041735
+  },
+  {
+    "request_id": "32beabec-16ce-49ce-a7c1-6e7f6eac99ca",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_valid_1_1"
+    },
+    "http_status": 200,
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "4d1275a8-a5e9-4329-ba01-3460b0fdba1d",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "client_seconds": 0.1848320999997668
+  },
+  {
+    "request_id": "bab3cce2-503a-414e-9451-4af7c41c23b0",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_valid_1_2"
+    },
+    "http_status": 200,
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "d8bd7049-2026-4b10-a9da-ce408b2f1921",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "client_seconds": 0.17820899999969697
+  }
+]
+```
+Actual first-trial HTTP output for criterion 3:
+```json
+[
+  {
+    "request_id": "c23d2ceb-eebc-473c-921e-c734e5c95c7b",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "",
+      "creator_id": "cap_a0c542bd72a3_empty_1_0"
+    },
+    "http_status": 400,
+    "output": {
+      "error": "text must be a non-empty string."
+    },
+    "client_seconds": 0.018856599999708124
+  },
+  {
+    "request_id": "28cd7e25-0bb4-4506-95b0-3c3346591db2",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "",
+      "creator_id": "cap_a0c542bd72a3_empty_1_1"
+    },
+    "http_status": 400,
+    "output": {
+      "error": "text must be a non-empty string."
+    },
+    "client_seconds": 0.008134200000313285
+  },
+  {
+    "request_id": "344c4a95-d1d8-4a67-b4b0-b08405116b11",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "",
+      "creator_id": "cap_a0c542bd72a3_empty_1_2"
+    },
+    "http_status": 400,
+    "output": {
+      "error": "text must be a non-empty string."
+    },
+    "client_seconds": 0.008532300000297255
+  }
+]
+```
+Actual first-trial HTTP output for criterion 5:
+```json
+[
+  {
+    "request_id": "894de5ff-b65c-418c-8054-b7f554a139d0",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "http_status": 200,
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "c10f0ab0-54c3-4e24-812a-498274d532b9",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "client_seconds": 0.16972609999993438
+  },
+  {
+    "request_id": "3f074d3d-1928-492a-9ec8-0f3e9a69e7ba",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "http_status": 200,
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "85529340-2e76-416b-b1e6-0fc6e5490b17",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "client_seconds": 0.21134559999973135
+  },
+  {
+    "request_id": "7ddc4225-af4a-4eb4-bc5f-cdd508170380",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "http_status": 200,
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "a6ba07fe-7c23-4570-850f-d039c4753530",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "client_seconds": 0.19642950000070414
+  },
+  {
+    "request_id": "293e78d2-eda4-47a4-910c-3d4e93c66d85",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "http_status": 200,
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "9fb1e760-7514-460c-8997-e47d49c353d8",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "client_seconds": 0.16265539999949397
+  },
+  {
+    "request_id": "87b37417-4123-4295-aba3-210bab93801b",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "http_status": 200,
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "cd02925b-1b01-4e2e-a355-b02f67122e61",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "client_seconds": 0.17828319999989617
+  },
+  {
+    "request_id": "23b7ff17-db6d-46ac-a225-b4ef52d512f6",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "http_status": 200,
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "badf5a1c-66ab-40f3-84f2-933d64be04f4",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "client_seconds": 0.20278550000057294
+  },
+  {
+    "request_id": "2a4396e3-bfdc-4f6c-9073-f97ee5c4fb81",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "http_status": 200,
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "76eb2c77-f93e-4d09-9a69-df1a333b3c5b",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "client_seconds": 0.27465099999972153
+  },
+  {
+    "request_id": "644f412a-6075-49c2-9007-c02a6b998e3a",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "http_status": 200,
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "33505e3f-71e2-43ca-8c4b-65856645be58",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "client_seconds": 0.20267340000009426
+  },
+  {
+    "request_id": "8646f36f-2972-4f0f-9103-5cadd23d583b",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "http_status": 200,
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "91da2096-86ae-468e-bef3-d0d7e8d4d0c5",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "client_seconds": 0.20106659999964904
+  },
+  {
+    "request_id": "facfd4e7-c7e5-44cc-bfba-9510d3321057",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "http_status": 200,
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "2321863e-68f6-411e-8d5b-015768d90074",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "client_seconds": 0.18662380000023404
+  },
+  {
+    "request_id": "80d17a24-83e0-46cf-9e96-59a249daf134",
+    "method": "POST",
+    "path": "/submit",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "http_status": 429,
+    "output": {
+      "error": "rate_limited",
+      "limit": "10 per 1 minute",
+      "message": "Too many submissions. Try again shortly."
+    },
+    "client_seconds": 0.010334200000215787
+  }
+]
+```
+Operational records produced by operational.py::install.<locals>.finish_operational_request:
+```json
+[
+  {
+    "timestamp": "2026-11-23T07:26:37.317840+00:00",
+    "request_id": "cc511750-802d-4732-aecb-5461b8199939",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_warm_1"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "07940172-fd85-437c-9965-45a6711b3d7b",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.35335810000015044
+  },
+  {
+    "timestamp": "2026-11-23T07:26:37.677210+00:00",
+    "request_id": "5a149713-12ed-4c53-a585-42ffd5604ecf",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_valid_1_0"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "367dfd8e-85e7-400b-b974-9612c856a57e",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.14354400000047463
+  },
+  {
+    "timestamp": "2026-11-23T07:26:37.841637+00:00",
+    "request_id": "32beabec-16ce-49ce-a7c1-6e7f6eac99ca",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_valid_1_1"
+    },
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "4d1275a8-a5e9-4329-ba01-3460b0fdba1d",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "http_status": 200,
+    "duration_seconds": 0.1636916999996174
+  },
+  {
+    "timestamp": "2026-11-23T07:26:38.020687+00:00",
+    "request_id": "bab3cce2-503a-414e-9451-4af7c41c23b0",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_valid_1_2"
+    },
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "d8bd7049-2026-4b10-a9da-ce408b2f1921",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "http_status": 200,
+    "duration_seconds": 0.16307500000039
+  },
+  {
+    "timestamp": "2026-11-23T07:26:38.200021+00:00",
+    "request_id": "c23d2ceb-eebc-473c-921e-c734e5c95c7b",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "",
+      "creator_id": "cap_a0c542bd72a3_empty_1_0"
+    },
+    "output": {
+      "error": "text must be a non-empty string."
+    },
+    "http_status": 400,
+    "duration_seconds": 0.0029586999999082764
+  },
+  {
+    "timestamp": "2026-11-23T07:26:38.208743+00:00",
+    "request_id": "28cd7e25-0bb4-4506-95b0-3c3346591db2",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "",
+      "creator_id": "cap_a0c542bd72a3_empty_1_1"
+    },
+    "output": {
+      "error": "text must be a non-empty string."
+    },
+    "http_status": 400,
+    "duration_seconds": 0.0015012999992904952
+  },
+  {
+    "timestamp": "2026-11-23T07:26:38.216790+00:00",
+    "request_id": "344c4a95-d1d8-4a67-b4b0-b08405116b11",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "",
+      "creator_id": "cap_a0c542bd72a3_empty_1_2"
+    },
+    "output": {
+      "error": "text must be a non-empty string."
+    },
+    "http_status": 400,
+    "duration_seconds": 0.0018232000002171844
+  },
+  {
+    "timestamp": "2026-11-23T07:26:38.225896+00:00",
+    "request_id": "894de5ff-b65c-418c-8054-b7f554a139d0",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "c10f0ab0-54c3-4e24-812a-498274d532b9",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.16389999999955762
+  },
+  {
+    "timestamp": "2026-11-23T07:26:38.393811+00:00",
+    "request_id": "3f074d3d-1928-492a-9ec8-0f3e9a69e7ba",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "85529340-2e76-416b-b1e6-0fc6e5490b17",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "http_status": 200,
+    "duration_seconds": 0.20601589999932912
+  },
+  {
+    "timestamp": "2026-11-23T07:26:38.620544+00:00",
+    "request_id": "7ddc4225-af4a-4eb4-bc5f-cdd508170380",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "a6ba07fe-7c23-4570-850f-d039c4753530",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "http_status": 200,
+    "duration_seconds": 0.17688940000061848
+  },
+  {
+    "timestamp": "2026-11-23T07:26:38.802505+00:00",
+    "request_id": "293e78d2-eda4-47a4-910c-3d4e93c66d85",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "9fb1e760-7514-460c-8997-e47d49c353d8",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.15727609999976266
+  },
+  {
+    "timestamp": "2026-11-23T07:26:38.978775+00:00",
+    "request_id": "87b37417-4123-4295-aba3-210bab93801b",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "cd02925b-1b01-4e2e-a355-b02f67122e61",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "http_status": 200,
+    "duration_seconds": 0.15981920000012906
+  },
+  {
+    "timestamp": "2026-11-23T07:26:39.152918+00:00",
+    "request_id": "23b7ff17-db6d-46ac-a225-b4ef52d512f6",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "badf5a1c-66ab-40f3-84f2-933d64be04f4",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "http_status": 200,
+    "duration_seconds": 0.18685119999918243
+  },
+  {
+    "timestamp": "2026-11-23T07:26:39.349135+00:00",
+    "request_id": "2a4396e3-bfdc-4f6c-9073-f97ee5c4fb81",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "76eb2c77-f93e-4d09-9a69-df1a333b3c5b",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.2664086999993742
+  },
+  {
+    "timestamp": "2026-11-23T07:26:39.634793+00:00",
+    "request_id": "644f412a-6075-49c2-9007-c02a6b998e3a",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "33505e3f-71e2-43ca-8c4b-65856645be58",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "http_status": 200,
+    "duration_seconds": 0.1836406000002171
+  },
+  {
+    "timestamp": "2026-11-23T07:26:39.835564+00:00",
+    "request_id": "8646f36f-2972-4f0f-9103-5cadd23d583b",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "91da2096-86ae-468e-bef3-d0d7e8d4d0c5",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "http_status": 200,
+    "duration_seconds": 0.18498120000003837
+  },
+  {
+    "timestamp": "2026-11-23T07:26:40.035961+00:00",
+    "request_id": "facfd4e7-c7e5-44cc-bfba-9510d3321057",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "2321863e-68f6-411e-8d5b-015768d90074",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.1711433999998917
+  },
+  {
+    "timestamp": "2026-11-23T07:26:40.212910+00:00",
+    "request_id": "80d17a24-83e0-46cf-9e96-59a249daf134",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_1"
+    },
+    "output": {
+      "error": "rate_limited",
+      "limit": "10 per 1 minute",
+      "message": "Too many submissions. Try again shortly."
+    },
+    "http_status": 429,
+    "duration_seconds": 0.0023158000003604684
+  },
+  {
+    "timestamp": "2026-11-23T07:26:40.346266+00:00",
+    "request_id": "2f63c562-7e67-4c01-bd86-8297b39bb6be",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_warm_2"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "168675ab-aa45-4d2c-8fa6-4a110786c3f0",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.20422039999994013
+  },
+  {
+    "timestamp": "2026-11-23T07:26:40.558501+00:00",
+    "request_id": "cf6ea546-6361-437e-92b9-b15e0586cfad",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_valid_2_0"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "38ad1a93-87fa-443f-88a6-fa3711e3bd05",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.19460030000027473
+  },
+  {
+    "timestamp": "2026-11-23T07:26:40.759023+00:00",
+    "request_id": "1d9d2df3-d7c9-4254-b1dd-5d82c9ecb531",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_valid_2_1"
+    },
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "21f78e44-a3b9-436c-9394-144f13af4c63",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "http_status": 200,
+    "duration_seconds": 0.19042499999977736
+  },
+  {
+    "timestamp": "2026-11-23T07:26:40.970929+00:00",
+    "request_id": "d27bdf45-4435-4c52-bff7-58c77e2cfc83",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_valid_2_2"
+    },
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "e6ce3165-79b4-42eb-95ec-3f51243cec26",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "http_status": 200,
+    "duration_seconds": 0.18067380000047706
+  },
+  {
+    "timestamp": "2026-11-23T07:26:41.171345+00:00",
+    "request_id": "6bf38166-cddc-4b03-bcd8-f5aefcce2336",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "",
+      "creator_id": "cap_a0c542bd72a3_empty_2_0"
+    },
+    "output": {
+      "error": "text must be a non-empty string."
+    },
+    "http_status": 400,
+    "duration_seconds": 0.0024041999995461083
+  },
+  {
+    "timestamp": "2026-11-23T07:26:41.179816+00:00",
+    "request_id": "553a8763-f6c4-4782-8d95-b593e03e6b6c",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "",
+      "creator_id": "cap_a0c542bd72a3_empty_2_1"
+    },
+    "output": {
+      "error": "text must be a non-empty string."
+    },
+    "http_status": 400,
+    "duration_seconds": 0.0017397999999957392
+  },
+  {
+    "timestamp": "2026-11-23T07:26:41.207866+00:00",
+    "request_id": "3593da56-eeb3-48ee-9c0c-44befd2cbfb1",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "",
+      "creator_id": "cap_a0c542bd72a3_empty_2_2"
+    },
+    "output": {
+      "error": "text must be a non-empty string."
+    },
+    "http_status": 400,
+    "duration_seconds": 0.002612000000226544
+  },
+  {
+    "timestamp": "2026-11-23T07:26:41.215063+00:00",
+    "request_id": "666555e4-bdb1-4f22-88f3-086fc1a982eb",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_2"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "dfe25ea3-f408-496a-a8b9-ed54baa07037",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.1985591000002387
+  },
+  {
+    "timestamp": "2026-11-23T07:26:41.434591+00:00",
+    "request_id": "9c9fa5f2-9b77-47de-8e92-415125a5d6e1",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_2"
+    },
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "0f5264c9-b536-46fe-94fd-caf5649b6828",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "http_status": 200,
+    "duration_seconds": 0.1940375000003769
+  },
+  {
+    "timestamp": "2026-11-23T07:26:41.635092+00:00",
+    "request_id": "aa526fa6-9aa2-462e-b30b-83a53e3c4614",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_limit_2"
+    },
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "0cf4131d-04b0-4cb5-ad58-f5daa77462fc",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "http_status": 200,
+    "duration_seconds": 0.19854829999985668
+  },
+  {
+    "timestamp": "2026-11-23T07:26:41.860857+00:00",
+    "request_id": "9fd62b40-f81b-496a-a32a-77c16a0b1320",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_2"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "b6465a46-9080-49c2-a8cb-24656cfbcec8",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.17629459999989194
+  },
+  {
+    "timestamp": "2026-11-23T07:26:42.044450+00:00",
+    "request_id": "8f11347c-de56-4d15-9c98-57a97c031bc8",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_2"
+    },
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "a25335b5-2df5-4958-a155-e5be6d3291a5",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "http_status": 200,
+    "duration_seconds": 0.176456700000017
+  },
+  {
+    "timestamp": "2026-11-23T07:26:42.239456+00:00",
+    "request_id": "47bb07b5-27eb-429c-8393-746e4a3ffa7b",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_limit_2"
+    },
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "5903157f-c72b-41da-b51d-a9fc851f668e",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "http_status": 200,
+    "duration_seconds": 0.1806827999998859
+  },
+  {
+    "timestamp": "2026-11-23T07:26:42.440297+00:00",
+    "request_id": "a5a0b3f5-4713-4cf2-9971-6186f2f1e99b",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_2"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "076aaad4-3ded-40e4-a251-ccfe87d72589",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.17307700000037585
+  },
+  {
+    "timestamp": "2026-11-23T07:26:42.628105+00:00",
+    "request_id": "76baa133-e61d-48d9-8a82-7d1ea129127d",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_2"
+    },
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "914f3db0-ac0e-400c-aeee-db8a3e783b51",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "http_status": 200,
+    "duration_seconds": 0.17251889999988634
+  },
+  {
+    "timestamp": "2026-11-23T07:26:42.806793+00:00",
+    "request_id": "8e6a0240-57a6-4dc0-9bab-72e9b3682798",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_limit_2"
+    },
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "762b3b49-850b-4e40-846e-a4a9ba0f5543",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "http_status": 200,
+    "duration_seconds": 0.18346670000028098
+  },
+  {
+    "timestamp": "2026-11-23T07:26:43.010669+00:00",
+    "request_id": "b41ff976-8da4-4ac4-89b9-9738b2d41a6a",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_2"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "fbc62f9e-1c1c-49c0-a8f5-3e9bd0a79f4c",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.16769050000038987
+  },
+  {
+    "timestamp": "2026-11-23T07:26:43.199176+00:00",
+    "request_id": "a4adae5e-a07f-4598-a66f-1432e48a7821",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_2"
+    },
+    "output": {
+      "error": "rate_limited",
+      "limit": "10 per 1 minute",
+      "message": "Too many submissions. Try again shortly."
+    },
+    "http_status": 429,
+    "duration_seconds": 0.0024179000001822715
+  },
+  {
+    "timestamp": "2026-11-23T07:26:43.339517+00:00",
+    "request_id": "18da6ad1-7049-4cff-b3a5-f3a31276bc6f",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_warm_3"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "467d9828-f211-4b45-9903-aab195ffc7b4",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.17726190000030329
+  },
+  {
+    "timestamp": "2026-11-23T07:26:43.533511+00:00",
+    "request_id": "54fc9479-0032-4d2d-ba6a-821f27a65eac",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_valid_3_0"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "9ea51b37-3528-45f0-8b61-a324e3762116",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.1679439999998067
+  },
+  {
+    "timestamp": "2026-11-23T07:26:43.707152+00:00",
+    "request_id": "0f52a222-9103-448b-8763-7b8420cf6d0c",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_valid_3_1"
+    },
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "70ac3a28-98de-45da-96c3-f18197a845da",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "http_status": 200,
+    "duration_seconds": 0.17781819999981963
+  },
+  {
+    "timestamp": "2026-11-23T07:26:43.910184+00:00",
+    "request_id": "6ebc90ab-c7ad-4cbb-81de-f59c98ce06ac",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_valid_3_2"
+    },
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "2e76d6a8-2629-4bbd-b880-f8f6e4ea86f9",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "http_status": 200,
+    "duration_seconds": 0.1785184999998819
+  },
+  {
+    "timestamp": "2026-11-23T07:26:44.113186+00:00",
+    "request_id": "5afe59a1-0a4b-4c31-a6f6-baf7e801cd6d",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "",
+      "creator_id": "cap_a0c542bd72a3_empty_3_0"
+    },
+    "output": {
+      "error": "text must be a non-empty string."
+    },
+    "http_status": 400,
+    "duration_seconds": 0.0026090999999723863
+  },
+  {
+    "timestamp": "2026-11-23T07:26:44.123456+00:00",
+    "request_id": "4e86bbd8-d8c4-40d9-a30b-b4e1bbcef653",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "",
+      "creator_id": "cap_a0c542bd72a3_empty_3_1"
+    },
+    "output": {
+      "error": "text must be a non-empty string."
+    },
+    "http_status": 400,
+    "duration_seconds": 0.00179649999972753
+  },
+  {
+    "timestamp": "2026-11-23T07:26:44.130917+00:00",
+    "request_id": "d616230b-85f5-48b5-ba94-4c08064e1fa6",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "",
+      "creator_id": "cap_a0c542bd72a3_empty_3_2"
+    },
+    "output": {
+      "error": "text must be a non-empty string."
+    },
+    "http_status": 400,
+    "duration_seconds": 0.0023584000000482774
+  },
+  {
+    "timestamp": "2026-11-23T07:26:44.153401+00:00",
+    "request_id": "14ae1bc5-ec16-41a2-91da-6967bdac30fe",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_3"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "be9775d8-39c9-41e9-a4a0-0e4048c48f0c",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.17085429999951884
+  },
+  {
+    "timestamp": "2026-11-23T07:26:44.331033+00:00",
+    "request_id": "d56ad1d4-b4f8-4283-bf73-63dbaea8069e",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_3"
+    },
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "31d73e06-c4a9-4c81-b227-2a6c27f70bab",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "http_status": 200,
+    "duration_seconds": 0.1764895999995133
+  },
+  {
+    "timestamp": "2026-11-23T07:26:44.528974+00:00",
+    "request_id": "49277b2e-c8cc-4bd2-935f-86706d0c4ba2",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_limit_3"
+    },
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "a8bf71ca-b885-492b-8f51-59982956b820",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "http_status": 200,
+    "duration_seconds": 0.1812370000006922
+  },
+  {
+    "timestamp": "2026-11-23T07:26:44.716221+00:00",
+    "request_id": "5ae24f5e-f062-4d19-a620-3897d6c91596",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_3"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "d2733976-edf8-4266-99fc-1d1a4addf891",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.17072559999996884
+  },
+  {
+    "timestamp": "2026-11-23T07:26:44.905603+00:00",
+    "request_id": "cdebdbcc-00ae-4aa4-9dc7-9e2993b9847a",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_3"
+    },
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "eb39169a-e976-4eb0-8366-905d8a5b5e66",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "http_status": 200,
+    "duration_seconds": 0.16826429999946413
+  },
+  {
+    "timestamp": "2026-11-23T07:26:45.087840+00:00",
+    "request_id": "dddc6a07-b1a3-479f-b010-f292c2dd8215",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_limit_3"
+    },
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "056a6684-5fa1-4d3e-bad2-63b61d2fc958",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "http_status": 200,
+    "duration_seconds": 0.17758599999979197
+  },
+  {
+    "timestamp": "2026-11-23T07:26:45.282087+00:00",
+    "request_id": "0639f51b-c586-418f-9654-d7d3223fbe63",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_3"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "f65f8b56-9e66-4bde-a97c-aa1063442831",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.16870180000023538
+  },
+  {
+    "timestamp": "2026-11-23T07:26:45.464088+00:00",
+    "request_id": "0fb212bb-412d-46e9-9995-43a428b04f4b",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_3"
+    },
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "489ec658-d3a2-4f7f-a93f-4ea58fe0ecad",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "http_status": 200,
+    "duration_seconds": 0.1700881999995545
+  },
+  {
+    "timestamp": "2026-11-23T07:26:45.652177+00:00",
+    "request_id": "aa7b44a9-ed99-4f17-8db2-b5adf13979cb",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_limit_3"
+    },
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "8d44b73e-b167-4965-b1d6-5daddc369ddd",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "http_status": 200,
+    "duration_seconds": 0.17594499999995605
+  },
+  {
+    "timestamp": "2026-11-23T07:26:45.846676+00:00",
+    "request_id": "45b21783-5a23-4bbe-8681-1eb244927751",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_limit_3"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "20e4b250-4c0d-46ba-b625-ef213717a000",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.16991890000008425
+  },
+  {
+    "timestamp": "2026-11-23T07:26:46.034796+00:00",
+    "request_id": "6ce666d7-d558-4cd2-8219-ddd9e6b046dd",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_limit_3"
+    },
+    "output": {
+      "error": "rate_limited",
+      "limit": "10 per 1 minute",
+      "message": "Too many submissions. Try again shortly."
+    },
+    "http_status": 429,
+    "duration_seconds": 0.002331199999389355
+  },
+  {
+    "timestamp": "2026-11-23T07:26:46.178451+00:00",
+    "request_id": "35b0dad3-c3a0-4bdd-bfcf-8d93ac62f53d",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_cost_0"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "0c577435-1de6-48e1-9851-760a802d895e",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.17849529999966762
+  },
+  {
+    "timestamp": "2026-11-23T07:26:46.362930+00:00",
+    "request_id": "e6ab6956-30c7-4d6d-bc11-641ef44ca720",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_cost_1"
+    },
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "7431da64-4e38-4550-8f61-7e18f2cbe8b5",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "http_status": 200,
+    "duration_seconds": 0.16969129999961297
+  },
+  {
+    "timestamp": "2026-11-23T07:26:46.550443+00:00",
+    "request_id": "b5a50b79-67ff-45eb-b76e-0c0361d7ee7f",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_cost_2"
+    },
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "6177d181-917c-484b-a66d-3119622b5b73",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "http_status": 200,
+    "duration_seconds": 0.18327059999955964
+  },
+  {
+    "timestamp": "2026-11-23T07:26:46.739567+00:00",
+    "request_id": "8e2d5adf-aa66-4023-aa1a-04570213a8e9",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_cost_3"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "51039a52-3d1e-4aa2-9ef3-66a5efb5bbe7",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.1731707999997525
+  },
+  {
+    "timestamp": "2026-11-23T07:26:46.927206+00:00",
+    "request_id": "9d1f80b4-697f-44ca-b55d-10d0b48757b4",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_cost_4"
+    },
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "f5408c99-3213-4f71-be2a-5888d9c8c5f6",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "http_status": 200,
+    "duration_seconds": 0.17301140000017767
+  },
+  {
+    "timestamp": "2026-11-23T07:26:47.115884+00:00",
+    "request_id": "3b1f6354-07cb-40a6-9bd3-65c9d7ac4d1e",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_cost_5"
+    },
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "983ab80d-93c1-4bb3-8592-32c9fe1d0e73",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "http_status": 200,
+    "duration_seconds": 0.18168960000002699
+  },
+  {
+    "timestamp": "2026-11-23T07:26:47.316262+00:00",
+    "request_id": "5360efbe-b36e-46d5-bc10-9f7a99896eef",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_cost_6"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "da5988ee-35cb-45fc-b0db-ee41cf5ff0a0",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.18868569999995088
+  },
+  {
+    "timestamp": "2026-11-23T07:26:47.510459+00:00",
+    "request_id": "78987031-c489-4d70-b35a-8d424f44c3e9",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "The community garden has become a useful meeting place for people who live on our street. Each weekend several neighbors bring tools and spend an hour watering vegetables or removing weeds from the narrow paths between the planting beds. Working together gives everyone a chance to share practical advice while producing fresh food for their families.",
+      "creator_id": "cap_a0c542bd72a3_cost_7"
+    },
+    "output": {
+      "confidence": 0.48119999999999996,
+      "content_id": "ae5ae8e6-799c-42a7-ada9-99409d90b6f1",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.4332,
+      "status": "decided",
+      "style_score": 0.5292
+    },
+    "http_status": 200,
+    "duration_seconds": 0.18897259999994276
+  },
+  {
+    "timestamp": "2026-11-23T07:26:47.708115+00:00",
+    "request_id": "61053914-41dc-4da2-b1ce-1c86ba33d4b5",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Preparing a weekly schedule helps me balance coursework with responsibilities at home and time with friends. I begin by listing important deadlines and then divide larger assignments into smaller tasks that fit into the available hours on different days. The plan sometimes changes, but having a clear starting point makes it easier to decide what needs attention.",
+      "creator_id": "cap_a0c542bd72a3_cost_8"
+    },
+    "output": {
+      "confidence": 0.53235,
+      "content_id": "e2707d8f-00d3-4faf-9639-bc64d029d408",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.5226,
+      "status": "decided",
+      "style_score": 0.5421
+    },
+    "http_status": 200,
+    "duration_seconds": 0.18230099999982485
+  },
+  {
+    "timestamp": "2026-11-23T07:26:47.895570+00:00",
+    "request_id": "c2adfb7f-8de7-4ab6-bc41-24964b14b350",
+    "method": "POST",
+    "path": "/submit",
+    "query": "",
+    "input": {
+      "text": "Our neighborhood library opened a small reading room beside the main entrance last spring. Volunteers arranged comfortable chairs near the windows and placed a collection of donated books on wooden shelves for visitors of different ages. I visit on Saturday mornings because the quiet space helps me concentrate on reading before the afternoon becomes busy.",
+      "creator_id": "cap_a0c542bd72a3_cost_9"
+    },
+    "output": {
+      "confidence": 0.4515,
+      "content_id": "a732bbb6-a5d5-42b6-853c-5e4619d4c6f9",
+      "guess": "unsure",
+      "label": "We cannot confidently distinguish human-written from AI-generated writing in this text. This is not an accusation of AI use. You can request a review using the content ID.",
+      "model_score": 0.3528,
+      "status": "decided",
+      "style_score": 0.5502
+    },
+    "http_status": 200,
+    "duration_seconds": 0.15894339999977092
+  }
+]
+```
