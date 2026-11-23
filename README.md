@@ -1738,3 +1738,37 @@ The existing audit log does not measure request duration or consistently capture
 **How I Used AI**
 
 I asked the assistant to inspect my existing service and distinguish existing functionality from a new capstone extension. It identified gaps in request-level measurement and outdated running instructions, and helped draft this scope. I will update this section with a second specific moment after the work occurs.
+
+## Capstone Latency Breakdown
+
+This standalone latency breakdown was measured before the startup
+improvement, but before this stretch declaration was committed.
+I therefore do not claim that the stretch was declared before measurement.
+
+The script timed library imports, detector._load(), and two successive
+detector.model_signal() calls in a separate Python process, not through HTTP.
+
+| Stage | Seconds |
+|---|---:|
+| Import torch and transformers | 6.30 |
+| Import detector and load the model/tokenizer | 3.67 |
+| First scoring call after loading | 0.285 |
+| Second scoring call | 0.119 |
+
+Imports were the largest measured stage, followed by model loading.
+Imports, model loading, and the first scoring call totaled about
+10.26 seconds in this standalone process.
+
+The baseline service separately recorded a first-request server duration
+of about 20.23 seconds. These are different runs under potentially
+different conditions, so the standalone timings do not directly partition
+that HTTP request's duration.
+
+Planned improvement: call detector.warm_up() in run_local.py before
+app.run(). This should move library import and model-loading work before
+the server accepts requests. It does not remove that work or guarantee
+that the first inference will be fully warm.
+
+The tradeoff is a longer wait before the service starts accepting requests.
+After implementing the change, I will rerun all five original criteria
+for three trials each and compare the first-request and warm timings.
